@@ -4,7 +4,7 @@ const urlTableProduit = "http://localhost:8080/ords/TP3/produit/";
 
 /* Afficher tous les produits de la table "produit". */
 const listeProduits = document.getElementById("produit");
-fetch(url_table_produit)
+fetch(urlTableProduit)
     .then((resp) => resp.json())
     .then(function (data) {
         let produits = data.items;
