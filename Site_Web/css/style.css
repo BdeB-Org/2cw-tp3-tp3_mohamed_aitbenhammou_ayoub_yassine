@@ -100,3 +100,11 @@ label {
     width: 300px;
     text-align: center;
 }
+
+
+
+/* Style pour la page inscription.html. */
+
+.titre-afficher-produits {
+    margin-left: 10%;
+}
