@@ -43,6 +43,12 @@ fetch(url_table_produit)
             descriptionProduit.innerHTML = produit.description;
             append(divInformationProduit, descriptionProduit)
 
+            // Quantité du produit
+            let quantiteProduit = createNode("p");
+            quantiteProduit.className = "quantite-produit";
+            quantiteProduit.innerHTML = `Quantité disponible ${produit.quantite}`;
+            append(divInformationProduit, quantiteProduit);
+
             
         });
     })
