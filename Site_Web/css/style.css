@@ -168,3 +168,16 @@ label {
     transition-duration: 0.15s;
     background-color: rgb(85, 78, 78);
 }
+
+.div-image-laptop {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    float: left;
+}
+
+.image-laptop {
+    width: 98%;
+    height: 100%;
+    object-fit: cover;
+}
