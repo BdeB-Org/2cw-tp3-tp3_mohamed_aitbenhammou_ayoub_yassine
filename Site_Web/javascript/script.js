@@ -19,6 +19,12 @@ fetch(url_table_produit)
             let divImageLaptop = createNode("div");
             divImageLaptop.className = "div-image-laptop";
             append(divProduit, divImageLaptop)
+            
+            // Image
+            let imageLaptop = createNode("img");
+            imageLaptop.className = "image-laptop";
+            imageLaptop.src = "/image/laptop.avif";
+            append(divImageLaptop, imageLaptop);
 
             
         });
