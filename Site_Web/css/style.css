@@ -2,3 +2,9 @@
 .nom-site {
     font-family: 'Roboto', sans-serif;
 }
+
+
+/* Style pour la page principale "index.html". */
+.description-accueil {
+    font-size: 20px;
+}
