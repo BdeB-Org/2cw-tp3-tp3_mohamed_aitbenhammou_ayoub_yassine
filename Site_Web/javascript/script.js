@@ -1,3 +1,8 @@
+const urlTableProduit = "http://localhost:8080/ords/TP3/produit/";
+
+
+
+
 function confirmerInscription() {
     
 
@@ -25,3 +30,4 @@ function confirmerInscription() {
     }
 
 }
+
