@@ -4,7 +4,23 @@ const urlTableProduit = "http://localhost:8080/ords/TP3/produit/";
 
 /* Afficher tous les produits de la table "produit". */
 const listeProduits = document.getElementById("produit");
+fetch(url_table_produit)
+    .then((resp) => resp.json())
+    .then(function (data) {
+        let produits = data.items;
+        return produits.map(function (produit) {
+            
+            // Ajout d'un élément de type "div" dans la page produits.html.
+            let divProduit = createNode("div");
+            divProduit.className = "div-produit-afficher";
+            append(listeProduits, divProduit);
 
+            
+        });
+    })
+    .catch(function (error) {
+        console.log(JSON.stringify(error));
+    });
 
 
 
