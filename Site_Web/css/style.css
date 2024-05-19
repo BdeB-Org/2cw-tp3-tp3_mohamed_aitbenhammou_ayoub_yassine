@@ -163,3 +163,8 @@ label {
     border-style: solid;
     font-size: 15px;
 }
+
+.bouton-ajouter-au-panier:hover {
+    transition-duration: 0.15s;
+    background-color: rgb(85, 78, 78);
+}
