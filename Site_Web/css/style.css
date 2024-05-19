@@ -9,6 +9,13 @@
     font-size: 20px;
 }
 
+/* Style pour toutes les pages. */
+body {
+    background-image: url(../image/image-de-fond.avif);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 
 .message-accueil {
     margin-top: 10%;
