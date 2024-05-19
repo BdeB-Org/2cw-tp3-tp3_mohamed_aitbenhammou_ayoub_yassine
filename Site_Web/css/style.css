@@ -153,3 +153,13 @@ label {
     margin-top: 0px;
     height: 20px;
 }
+
+
+.bouton-ajouter-au-panier {
+    margin-top: 50px;
+    padding: 15px;
+    color: black;
+    border-radius: 10px;
+    border-style: solid;
+    font-size: 15px;
+}
