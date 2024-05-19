@@ -47,7 +47,13 @@ fetch(url_table_produit)
             let quantiteProduit = createNode("p");
             quantiteProduit.className = "quantite-produit";
             quantiteProduit.innerHTML = `Quantité disponible ${produit.quantite}`;
-            append(divInformationProduit, quantiteProduit);
+            append(divInformationProduit, quantiteProduit); 
+
+            // Prix du produit
+            let prixProduit = createNode("p");
+            prixProduit.className = "prix-produit"
+            prixProduit.innerHTML = `Prix: ${produit.prix}`;
+            append(divInformationProduit, prixProduit);
 
             
         });
