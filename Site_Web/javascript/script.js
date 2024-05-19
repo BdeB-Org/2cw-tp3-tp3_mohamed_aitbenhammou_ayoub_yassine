@@ -26,6 +26,12 @@ fetch(url_table_produit)
             imageLaptop.src = "/image/laptop.avif";
             append(divImageLaptop, imageLaptop);
 
+            // Div informations du produit
+            let divInformationProduit = createNode("div");
+            divInformationProduit.className = "div-informations-produit"
+            append(divProduit, divInformationProduit);
+
+
             
         });
     })
