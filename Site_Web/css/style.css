@@ -77,3 +77,21 @@ a{
     text-decoration: none;
     color: black;
 }
+
+
+
+
+/* Style pour la page inscription.html. */
+.message-creer-compte {
+    margin-bottom: 50px;
+}
+
+.formulaire {
+    text-align: center;
+    font-size: 20px;
+}
+
+.formulaire-inscription {
+    margin-bottom: 25px;
+}
+
