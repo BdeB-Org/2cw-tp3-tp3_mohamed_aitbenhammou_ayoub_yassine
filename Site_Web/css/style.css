@@ -124,3 +124,8 @@ label {
     align-items: center;
     float: left;
 }
+
+.div-produit-afficher:hover {
+    transition: 0.15s;
+    transform: scale(1.15);
+}
