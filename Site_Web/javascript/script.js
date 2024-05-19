@@ -15,6 +15,11 @@ fetch(url_table_produit)
             divProduit.className = "div-produit-afficher";
             append(listeProduits, divProduit);
 
+            // Div image
+            let divImageLaptop = createNode("div");
+            divImageLaptop.className = "div-image-laptop";
+            append(divProduit, divImageLaptop)
+
             
         });
     })
