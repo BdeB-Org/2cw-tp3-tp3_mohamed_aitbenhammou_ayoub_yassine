@@ -37,6 +37,12 @@ fetch(url_table_produit)
             nomProduit.innerHTML = produit.nom_produit;
             append(divInformationProduit, nomProduit);
 
+            // Description du produit
+            let descriptionProduit = createNode("p");
+            descriptionProduit.className = "description-produits"
+            descriptionProduit.innerHTML = produit.description;
+            append(divInformationProduit, descriptionProduit)
+
             
         });
     })
