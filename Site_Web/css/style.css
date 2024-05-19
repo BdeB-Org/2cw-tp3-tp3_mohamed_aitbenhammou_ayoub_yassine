@@ -30,3 +30,38 @@
     transition-duration: 0.15s;
     background-color: rgb(85, 78, 78);
 }
+
+
+/* Style pour la bare de navigation dans toutes les pages. */
+.barre-de-navigation {
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.barre-de-navigation ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+    text-decoration: none;
+}
+
+.barre-de-navigation ul li::after {
+    content: '';
+    height: 3px;
+    width: 0;
+    background: black;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+}
+
+.barre-de-navigation ul li:hover::after {
+    width: 100%;
+    transition: 0.15;
+}
