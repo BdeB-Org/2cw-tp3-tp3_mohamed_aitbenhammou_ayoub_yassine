@@ -29,7 +29,7 @@ fetch(urlTableProduit)
             // Image
             let imageLaptop = createNode("img");
             imageLaptop.className = "image-laptop";
-            imageLaptop.src = "/image/laptop.avif";
+            imageLaptop.src = "../image/laptop.png";
             append(divImageLaptop, imageLaptop);
 
             // Div informations du produit
