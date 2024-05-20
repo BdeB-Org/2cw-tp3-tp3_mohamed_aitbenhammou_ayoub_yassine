@@ -1,6 +1,12 @@
 const urlTableProduit = "http://localhost:8080/ords/TP3/produit/";
 
+function createNode(element) {
+    return document.createElement(element);
+}
 
+function append(parent, el) {
+    return parent.appendChild(el);
+}
 
 /* Afficher tous les produits de la table "produit". */
 const listeProduits = document.getElementById("produit");
