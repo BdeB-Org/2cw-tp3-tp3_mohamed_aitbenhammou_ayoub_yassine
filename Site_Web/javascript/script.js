@@ -68,9 +68,9 @@ fetch(urlTableProduit)
         });
     })
     .catch(function (error) {
-        console.log(JSON.stringify(error));
+        console.log((error));
     });
-
+    //console.log(JSON.stringify(error));
 
 
 function confirmerInscription() {
