@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription</title>
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../javascript/script.js"></script>
+
+</head>
+<body>
+
+    <div class="bannière">
+        <div class="barre-de-navigation">
+            <h1 class="nom-site">Ludo</h1>
+            <ul>
+                <li><a href="../index.html">Page d'accueil </a></li>
+                <li><a href="produits.html">Produits</a></li>
+                <li><a href="inscription.html">S'inscire</a></li>
+                <li><a href="connexion.html">Se connecter</a></li>
+                <li><a href="panier.html">Panier</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="formulaire" id="formulaire">
+        <form>
+            <h1 class="message-creer-compte">Créer un compte</h1>
+            <div class="formulaire-inscription">
+                <label for="nom">Nom:</label><br>
+                <input type="text" id="nom" name="nom" required>
+            </div>
+            <div class="formulaire-inscription">
+                <label for="prenom">Prénom:</label><br>
+                <input type="text" id="prenom" name="prenom" required>
+            </div>
+            <div class="formulaire-inscription">
+                <label for="nomUtilisateur">Nom d'utilisateur:</label><br>
+                <input type="text" id="nomUtilisateur" name="nomUtilisateur" required>
+            </div class="formulaire-inscription">
+            <div class="formulaire-inscription">
+                <label for="motDePasse">Mot de passe:</label><br>
+                <input type="password" id="motDePasse" name="motDePasse" required>
+            </div>
+            <div class="formulaire-inscription">
+                <label for="motDePasseConfirmation">Confirmer le mot de passe:</label><br>
+                <input type="password" form="motDePasseConfirmation" id="motDePasseConfirmation" name="mot-de-passe-confirmation" required>
+            </div>
+            <button class="boutton-soumettre" id="boutton-soumettre" onclick="confirmerInscription()">Soumettre</button>
+        </form>
+    </div>
+
+    
+    
+</body>
+</html>
