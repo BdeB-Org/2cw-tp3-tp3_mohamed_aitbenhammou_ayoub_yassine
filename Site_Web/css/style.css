@@ -190,3 +190,188 @@ label {
     flex-direction: column;
     float: right;
 }
+/* Réinitialisation des styles par défaut */
+* {
+
+
+    margin: 0; /* Réinitialisation de la marge à zéro */
+    padding: 0; /* Réinitialisation du rembourrage à zéro */
+    box-sizing: border-box; /* Utilisation de la boîte de modèle border-box pour inclure la taille des bordures dans la largeur et la hauteur */
+}
+
+/* Utilisation de la police Poppins */
+body {
+    font-family: 'Poppins', sans-serif; /* Définition de la police de caractères Poppins */
+    background-color: #f7f7f7; /* Couleur de fond du corps */
+    color: #333; /* Couleur du texte principale */
+    display: flex; /* Utilisation de la disposition flexible */
+    flex-direction: column; /* Alignement vertical des éléments */
+    min-height: 100vh; /* Définition de la hauteur minimale du corps pour occuper toute la hauteur de la fenêtre */
+}
+
+/* Style pour le conteneur central */
+.container {
+    width: 80%; /* Largeur du conteneur central */
+    margin: 0 auto; /* Centre le conteneur en utilisant des marges automatiques */
+    padding: 20px; /* Espacement interne du conteneur */
+}
+
+/* Styles pour l'en-tête */
+header {
+    background: #0066cc; /* Couleur de fond de l'en-tête */
+    color: #fff; /* Couleur du texte de l'en-tête */
+    padding: 20px 0; /* Espacement interne de l'en-tête */
+    margin-bottom: 20px; /* Marge inférieure de l'en-tête */
+}
+
+header h1 {
+    text-align: center; /* Alignement central du texte de l'en-tête */
+    font-weight: 600; /* Épaisseur de la police du texte de l'en-tête */
+}
+
+nav ul {
+    list-style: none; /* Suppression des puces de liste */
+    display: flex; /* Utilisation de la disposition flexible pour les éléments de navigation */
+    justify-content: center; /* Alignement horizontal central des éléments de navigation */
+    margin-top: 10px; /* Marge supérieure des éléments de navigation */
+}
+
+nav ul li {
+    margin: 0 15px; /* Espacement horizontal des éléments de navigation */
+}
+
+nav ul li a {
+    color: #fff; /* Couleur du texte des liens de navigation */
+    text-decoration: none; /* Suppression du soulignement des liens de navigation */
+    font-weight: 500; /* Épaisseur de la police des liens de navigation */
+    font-size: 18px; /* Taille de la police des liens de navigation */
+}
+
+nav ul li a:hover {
+    text-decoration: underline; /* Soulignement des liens de navigation au survol */
+}
+
+/* Styles pour le contenu principal */
+main {
+    background: #fff; /* Couleur de fond du contenu principal */
+    padding: 20px; /* Espacement interne du contenu principal */
+    border-radius: 10px; /* Arrondi des coins du contenu principal */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Ombre portée du contenu principal */
+    flex: 1; /* Utilisation de l'espace disponible restant */
+}
+
+.cart {
+    display: flex; /* Utilisation de la disposition flexible pour le panier */
+    justify-content: space-between; /* Distribution uniforme des éléments du panier */
+    flex-wrap: wrap; /* Permettre le retour à la ligne des éléments du panier */
+}
+
+.cart-items {
+    flex: 2; /* Utilisation de 2/3 de l'espace disponible pour les articles du panier */
+}
+
+.cart-item {
+    display: flex; /* Utilisation de la disposition flexible pour chaque article du panier */
+    justify-content: space-between; /* Distribution uniforme des éléments de l'article du panier */
+    align-items: center; /* Alignement vertical des éléments de l'article du panier */
+    padding: 10px; /* Espacement interne de chaque article du panier */
+    border-bottom: 1px solid #eee; /* Bordure inférieure de chaque article du panier */
+}
+
+.cart-item img {
+    max-width: 100px; /* Largeur maximale de l'image de l'article du panier */
+    border-radius: 10px; /* Arrondi des coins de l'image de l'article du panier */
+    margin-right: 20px; /* Marge à droite de l'image de l'article du panier */
+}
+
+.item-details {
+    flex: 1; /* Utilisation de l'espace disponible pour les détails de l'article */
+}
+
+.item-details h3 {
+    margin-bottom: 10px; /* Marge inférieure du titre des détails de l'article */
+    font-weight: 600; /* Épaisseur de la police du titre des détails de l'article */
+}
+
+.item-details p {
+    margin-bottom: 5px; /* Marge inférieure des paragraphes des détails de l'article */
+}
+
+.quantity {
+    width: 50px; /* Largeur du champ de quantité */
+    text-align: center; /* Alignement central du texte du champ de quantité */
+    padding: 5px; /* Espacement interne du champ de quantité */
+    border: 1px solid #ccc; /* Bordure du champ de quantité */
+    border-radius: 5px; /* Arrondi des coins du champ de quantité */
+    font-size: 16px; /* Taille de la police du champ de quantité */
+    transition: all 0.3s ease; /* Transition pour les modifications du champ de quantité */
+}
+
+.quantity:focus {
+    border-color: #0066cc; /* Couleur de la bordure lorsqu'un champ de quantité est sélectionné */
+}
+
+.item-total-price {
+    font-weight: 600; /* Épaisseur de la police du prix total de l'article */
+}
+
+.remove-btn {
+    background: #e74c3c; /* Couleur de fond du bouton de suppression */
+    color: #fff; /* Couleur du texte du bouton de suppression */
+    border: none; /* Suppression de la bordure du bouton de suppression */
+    padding: 10px 20px; /* Espacement interne du bouton de suppression */
+    cursor: pointer; /* Curseur pointer au survol du bouton de suppression */
+    border-radius: 5px; /* Arrondi des coins du bouton de suppression */
+    transition: background 0.3s; /* Transition pour les changements de couleur de fond du bouton de suppression */
+}
+
+/* Commentaire */
+.remove-btn:hover {
+    background: #c0392b; /* Couleur de fond au survol du bouton de suppression */
+}
+
+/* Styles pour le résumé du panier */
+.cart-summary {
+    flex: 1; /* Utilisation de l'espace disponible pour le résumé du panier */
+    padding: 20px; /* Espacement interne du résumé du panier */
+    border: 1px solid #eee; /* Bordure du résumé du panier */
+    border-radius: 10px; /* Arrondi des coins du résumé du panier */
+    background: #fafafa; /* Couleur de fond du résumé du panier */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05); /* Ombre portée du résumé du panier */
+}
+
+.cart-summary h2 {
+    margin-bottom: 20px; /* Marge inférieure du titre du résumé du panier */
+    font-weight: 600; /* Épaisseur de la police du titre du résumé du panier */
+}
+
+.cart-summary p {
+    margin-bottom: 10px; /* Marge inférieure des paragraphes du résumé du panier */
+    font-size: 18px; /* Taille de la police des paragraphes du résumé du panier */
+}
+
+.checkout-btn {
+    display: block; /* Affichage en tant que bloc */
+    width: 100%; /* Largeur de 100% */
+    background: #27ae60; /* Couleur de fond du bouton de paiement */
+    color: #fff; /* Couleur du texte du bouton de paiement */
+    border: none; /* Suppression de la bordure */
+    padding: 15px; /* Espacement interne */
+    cursor: pointer; /* Curseur pointeur au survol */
+    border-radius: 5px; /* Arrondi des coins */
+    font-size: 20px; /* Taille de la police */
+    transition: background 0.3s; /* Transition pour les changements de couleur de fond */
+}
+
+.checkout-btn:hover {
+    background: #219150; /* Couleur de fond au survol */
+}
+
+/* Styles pour le pied de page */
+footer {
+    background: #0066cc; /* Couleur de fond du pied de page */
+    color: #fff; /* Couleur du texte du pied de page */
+    text-align: center; /* Alignement central */
+    padding: 20px 0; /* Espacement interne */
+    margin-top: 20px; /* Marge supérieure */
+}
