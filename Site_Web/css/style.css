@@ -203,8 +203,14 @@ label {
     width: 50%;
 }
 
+/* Style pour l'effet lorsque la souris passe par-dessus le div pour l'affichage des magasin. */
 .div-magasin-afficher:hover {
     transition-duration: 0.15s;
     background-color: white;
     transform: scale(1.15);
+}
+
+/* Style pour le positionnement des informations des magasins dans le div des magasins.*/
+.nom-magasin, .numero-magasin, .adresse-magasin, .numero-telephone-magasin, .horaire-ouverture-magasin {
+    margin-left: 5%;
 }
