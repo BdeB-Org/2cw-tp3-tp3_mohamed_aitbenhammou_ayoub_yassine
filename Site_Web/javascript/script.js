@@ -5,19 +5,23 @@ function createNode(element) {
     return document.createElement(element);
 }
 
-// 
+
+// Placer un élément dans un élément parent.
 function append(parent, el) {
     return parent.appendChild(el);
 }
 
+
 /* Afficher tous les produits de la table "produit" dynamiquement dans la page "produit.html". */
 const listeProduits = document.getElementById("produit");
+
+
 fetch(urlTableProduit)
     .then((resp) => resp.json())
     .then(function (data) {
         let produits = data.items;
         return produits.map(function (produit) {
-            
+
             // Ajout d'un élément de type "div" dans la page produits.html.
             let divProduit = createNode("div");
             divProduit.className = "div-produit-afficher";
@@ -27,7 +31,7 @@ fetch(urlTableProduit)
             let divImageLaptop = createNode("div");
             divImageLaptop.className = "div-image-laptop";
             append(divProduit, divImageLaptop)
-            
+
             // Image
             let imageLaptop = createNode("img");
             imageLaptop.className = "image-laptop";
@@ -49,13 +53,13 @@ fetch(urlTableProduit)
             let descriptionProduit = createNode("p");
             descriptionProduit.className = "description-produits"
             descriptionProduit.innerHTML = produit.description;
-            append(divInformationProduit, descriptionProduit)
+            append(divInformationProduit, descriptionProduit);
 
             // Quantité du produit
             let quantiteProduit = createNode("p");
             quantiteProduit.className = "quantite-produit";
             quantiteProduit.innerHTML = `Quantité disponible ${produit.quantite}`;
-            append(divInformationProduit, quantiteProduit); 
+            append(divInformationProduit, quantiteProduit);
 
             // Prix du produit
             let prixProduit = createNode("p");
@@ -72,40 +76,9 @@ fetch(urlTableProduit)
             }
             append(divProduit, boutonAjouterAuPanier);
 
-            
         });
     })
     .catch(function (error) {
         console.log((error));
     });
-    //console.log(JSON.stringify(error));
-
-
-function confirmerInscription() {
     
-
-    var nomClient = document.getElementById("nom").value;
-    var prenomClient = document.getElementById("prenom").value;
-    var nomUtilisateur = document.getElementById("nomUtilisateur").value;
-    var motDePasse = document.getElementById("motDePasse").value;
-    var motDePasseConfirmation = document.getElementById("motDePasseConfirmation").value;
-
-    let idClient = 1;
-
-    var motDePasseIncorrect = motDePasse != motDePasseConfirmation;
-
-    var informationsManquantes = nomClient == "" || prenomClient == "" || nomUtilisateur == "";
-
-    // Vérifier si des informations sont manquantes.
-    if (informationsManquantes) {
-        window.alert("Le compe n'a pas été créé. Il manque des informations à inscrire dans le formulaire.");
-
-        // Vérifier si le mot de passe et le mot de passe de confirmation sont identiques.
-    } else if (motDePasseIncorrect) {
-        window.alert("Le compte n'a pas été créé. Le mot de passe et le mot de passe de confirmation ne sont pas identiques.");
-    } else {
-        window.alert(`${nomClient} ${prenomClient}, votre compte a été créé. Vous pouvez maintenant vous connecter pour effectuer des achats.`);
-    }
-
-}
-
