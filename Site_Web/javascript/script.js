@@ -86,21 +86,30 @@ fetch(urlTableProduit)
     });
 
 
-
+    
 
 // Afficher tous les magasins dynamiquement dans la page "magasin.html".
 const listeMagasins = document.getElementById("magasin");
 fetch(urlTableMagasin)
     .then((resp) => resp.json())
     .then(function (data) {
-        let magasin = data.items;
+        let magasins = data.items;
         return magasins.map(function (magasin) {
-
+            
             // Ajout d'un élément de type "div" dans la page magasin.html.
             let divMagasin = createNode("div");
             divMagasin.className = "div-magasin-afficher";
+            
             append(listeMagasins, divMagasin);
+            window.alert("Test");
+            // Nom du magasin
+            let nomMagasin = createNode("h3");
+            nomMagasin.className = "nom-magasin";
+            nomMagasin.innerHTML = magasin.nom_magasin;
+            append(divMagasin, nomMagasin);
 
+
+            
 
         });
 
