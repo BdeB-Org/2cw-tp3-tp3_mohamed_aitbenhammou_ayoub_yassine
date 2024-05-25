@@ -107,6 +107,12 @@ fetch(urlTableMagasin)
             nomMagasin.innerHTML = magasin.nom_magasin;
             append(divMagasin, nomMagasin);
 
+            // Numéro du magasin
+            let numeroMagasin = createNode("p");
+            numeroMagasin.className = "numero-magasin";
+            numeroMagasin.innerHTML = `Numéro du magasin: ${magasin.id_magasin}`;
+            append(divMagasin, numeroMagasin);
+
             // Adresse du magasin
             let adresseMagasin = createNode("p");
             adresseMagasin.className = "adresse-magasin";
