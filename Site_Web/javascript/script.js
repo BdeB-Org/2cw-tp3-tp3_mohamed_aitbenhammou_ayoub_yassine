@@ -17,7 +17,7 @@ function append(parent, el) {
 }
 
 
-/* Afficher tous les produits de la table "produit" dynamiquement dans la page "produit.html". */
+//Afficher tous les produits de la table "produit" dynamiquement dans la page "produit.html".
 const listeProduits = document.getElementById("produit");
 
 
@@ -86,4 +86,16 @@ fetch(urlTableProduit)
     .catch(function (error) {
         console.log((error));
     });
-    
+
+
+
+
+// Afficher tous les magasins dynamiquement dans la page "magasin.html".
+fetch(urlTableMagasin)
+    .then((resp) => resp.json())
+    .then(function (data) {
+
+    })
+    .catch(function (error) {
+        console.log((error));
+    })
