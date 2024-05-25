@@ -94,6 +94,11 @@ fetch(urlTableProduit)
 fetch(urlTableMagasin)
     .then((resp) => resp.json())
     .then(function (data) {
+        let magasin = data.items;
+        return magasins.map(function (magasin) {
+
+
+        });
 
     })
     .catch(function (error) {
