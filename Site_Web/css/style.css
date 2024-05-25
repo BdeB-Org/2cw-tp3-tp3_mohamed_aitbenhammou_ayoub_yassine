@@ -196,7 +196,7 @@ label {
 
 /* Style pou déplacer les magasins vers la droite et faire de la place entre eux dans la page "magasin.html". */
 .div-magasin-afficher {
-    margin-left: 10%;
+    margin-left: 25%;
     margin-top: 5%;
     border: 2px solid black;
     border-radius: 20px;
