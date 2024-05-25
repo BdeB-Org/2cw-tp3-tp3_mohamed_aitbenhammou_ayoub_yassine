@@ -17,13 +17,14 @@ body {
 }
 
 
+/* Centrer le message d'accueil de la page index.html. */
 .message-accueil {
     margin-top: 10%;
     text-align: center;
     font-size: 25px;
 }
 
-
+/* Style pour le bouton "Nos produits" dans la page index.html. */
 .boutton-nos-produits {
     margin-top: 50px;
     padding: 15px;
@@ -33,6 +34,7 @@ body {
     font-size: 15px;
 }
 
+/* Style pour l'effet lorsque la souris passe par dessus le bouton dans la page index.html. */
 .boutton-nos-produits:hover {
     transition-duration: 0.15s;
     background-color: rgb(85, 78, 78);
@@ -103,8 +105,7 @@ label {
 
 
 
-/* Style pour la page inscription.html. */
-
+/* Style pour le titre des pages. */
 .titre-afficher-produits {
     margin-left: 10%;
 }
