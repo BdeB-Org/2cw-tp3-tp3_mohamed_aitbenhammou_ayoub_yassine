@@ -113,6 +113,12 @@ fetch(urlTableMagasin)
             adresseMagasin.innerHTML = `Adresse: ${magasin.adresse}`;
             append(divMagasin, adresseMagasin);
 
+            // Numéro de téléphone
+            let numeroTelephoneMagasin = createNode("p");
+            numeroTelephoneMagasin.className = "numero-telephone-magasin";
+            numeroTelephoneMagasin.innerHTML = `Numéro de téléphone: ${magasin.numero_telephone}`;
+            append(divMagasin, numeroTelephoneMagasin);
+
 
             
 
