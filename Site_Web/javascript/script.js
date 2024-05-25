@@ -70,6 +70,19 @@ fetch(urlTableProduit)
             prixProduit.innerHTML = `Prix: ${produit.prix}`;
             append(divInformationProduit, prixProduit);
 
+            // Magasin où le produit est disponible
+            let magasinVendu = createNode("p");
+            magasinVendu.className = "magasin-vendu";
+
+            if (parseInt(produit.magasin_id_magasin) == 1) {
+                magasinVendu.innerHTML = `Produit disponible chez: Ludo Montréal<br>Numéro du magasin est ${produit.magasin_id_magasin}`;
+            } else if (parseInt(produit.magasin_id_magasin == 2)) {
+                magasinVendu.innerHTML = `Produit disponible chez: Ludo Laval<br>Numéro du magasin est ${produit.magasin_id_magasin}`;
+            } else {
+                magasinVendu.innerHTML = `Produit disponible chez: Ludo Toronto<br>Numéro du magasin est ${produit.magasin_id_magasin}`;
+            }
+            append(divInformationProduit, magasinVendu);
+
             // Bouton ajouter au panier
             let boutonAjouterAuPanier = createNode("button");
             boutonAjouterAuPanier.className = "bouton-ajouter-au-panier"
