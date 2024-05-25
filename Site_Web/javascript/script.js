@@ -67,6 +67,15 @@ fetch(urlTableProduit)
             prixProduit.innerHTML = `Prix: ${produit.prix}`;
             append(divInformationProduit, prixProduit);
 
+            // Bouton ajouter au panier
+            let boutonAjouterAuPanier = createNode("button");
+            boutonAjouterAuPanier.className = "bouton-ajouter-au-panier"
+            boutonAjouterAuPanier.innerHTML = "Ajouter au panier";
+            boutonAjouterAuPanier.onclick = function() {
+                alert("Le produit a été ajouté au panier.");
+            }
+            append(divProduit, boutonAjouterAuPanier);
+
         });
     })
     .catch(function (error) {
