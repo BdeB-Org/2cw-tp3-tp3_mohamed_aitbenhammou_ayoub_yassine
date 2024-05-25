@@ -21,6 +21,12 @@ fetch(urlTableProduit)
     .then(function (data) {
         let produits = data.items;
         return produits.map(function (produit) {
+
+            // Ajout d'un élément de type "div" dans la page produits.html.
+            let divProduit = createNode("div");
+            divProduit.className = "div-produit-afficher";
+            append(listeProduits, divProduit);
+            
         });
     })
     .catch(function (error) {
