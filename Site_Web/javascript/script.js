@@ -1,4 +1,5 @@
 const urlTableMagasin = "http://localhost:8080/ords/TP3/magasin/";
+const urlTableClient = "http://localhost:8080/ords/TP3/client/";
 const urlTableProduit = "http://localhost:8080/ords/TP3/produit/";
 
 
