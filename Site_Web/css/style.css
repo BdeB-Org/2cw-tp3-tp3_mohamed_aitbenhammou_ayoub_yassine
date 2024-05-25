@@ -201,3 +201,9 @@ label {
     border: 2px solid black;
     border-radius: 20px;
 }
+
+.div-magasin-afficher:hover {
+    transition-duration: 0.15s;
+    background-color: white;
+    transform: scale(1.15);
+}
