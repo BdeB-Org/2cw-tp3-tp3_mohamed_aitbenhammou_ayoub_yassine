@@ -14,3 +14,16 @@ function append(parent, el) {
 
 /* Afficher tous les produits de la table "produit" dynamiquement dans la page "produit.html". */
 const listeProduits = document.getElementById("produit");
+
+
+fetch(urlTableProduit)
+    .then((resp) => resp.json())
+    .then(function (data) {
+        let produits = data.items;
+        return produits.map(function (produit) {
+        });
+    })
+    .catch(function (error) {
+        console.log((error));
+    });
+    
