@@ -97,9 +97,9 @@ fetch(urlTableMagasin)
         return magasins.map(function (magasin) {
 
             // Ajout d'un élément de type "div" dans la page magasin.html.
-            let divProduit = createNode("div");
-            divProduit.className = "div-magasin-afficher";
-            append(listeProduits, divProduit);
+            let divMagasin = createNode("div");
+            divMagasin.className = "div-magasin-afficher";
+            append(listeMagasins, divMagasin);
 
 
         });
