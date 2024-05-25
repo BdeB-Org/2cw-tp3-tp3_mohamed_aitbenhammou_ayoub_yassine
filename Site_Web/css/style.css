@@ -200,6 +200,7 @@ label {
     margin-top: 5%;
     border: 2px solid black;
     border-radius: 20px;
+    width: 50%;
 }
 
 .div-magasin-afficher:hover {
