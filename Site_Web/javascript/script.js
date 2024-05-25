@@ -19,8 +19,6 @@ function append(parent, el) {
 
 //Afficher tous les produits de la table "produit" dynamiquement dans la page "produit.html".
 const listeProduits = document.getElementById("produit");
-
-
 fetch(urlTableProduit)
     .then((resp) => resp.json())
     .then(function (data) {
@@ -91,11 +89,17 @@ fetch(urlTableProduit)
 
 
 // Afficher tous les magasins dynamiquement dans la page "magasin.html".
+const listeMagasins = document.getElementById("magasin");
 fetch(urlTableMagasin)
     .then((resp) => resp.json())
     .then(function (data) {
         let magasin = data.items;
         return magasins.map(function (magasin) {
+
+            // Ajout d'un élément de type "div" dans la page magasin.html.
+            let divProduit = createNode("div");
+            divProduit.className = "div-magasin-afficher";
+            append(listeProduits, divProduit);
 
 
         });
