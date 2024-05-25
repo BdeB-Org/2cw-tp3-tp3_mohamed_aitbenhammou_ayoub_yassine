@@ -26,7 +26,11 @@ fetch(urlTableProduit)
             let divProduit = createNode("div");
             divProduit.className = "div-produit-afficher";
             append(listeProduits, divProduit);
-            
+
+            // Div image
+            let divImageLaptop = createNode("div");
+            divImageLaptop.className = "div-image-laptop";
+            append(divProduit, divImageLaptop)
         });
     })
     .catch(function (error) {
