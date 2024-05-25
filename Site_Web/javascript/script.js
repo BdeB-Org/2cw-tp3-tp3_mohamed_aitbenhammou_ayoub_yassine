@@ -38,6 +38,11 @@ fetch(urlTableProduit)
             imageLaptop.src = "../image/laptop.png";
             append(divImageLaptop, imageLaptop);
 
+            // Div informations du produit
+            let divInformationProduit = createNode("div");
+            divInformationProduit.className = "div-informations-produit"
+            append(divProduit, divInformationProduit);
+
         });
     })
     .catch(function (error) {
