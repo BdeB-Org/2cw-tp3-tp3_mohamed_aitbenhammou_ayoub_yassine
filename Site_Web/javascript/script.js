@@ -119,6 +119,12 @@ fetch(urlTableMagasin)
             numeroTelephoneMagasin.innerHTML = `Numéro de téléphone: ${magasin.numero_telephone}`;
             append(divMagasin, numeroTelephoneMagasin);
 
+            // Horaire d'ouverture
+            let horarireOuvertureMagasin = createNode("p");
+            horarireOuvertureMagasin.className = "horaire-ouverture-magasin";
+            horarireOuvertureMagasin.innerHTML = `Horaire d'ouverture: ${magasin.horaire_ouverture}`;
+            append(divMagasin, horarireOuvertureMagasin);
+
 
             
 
