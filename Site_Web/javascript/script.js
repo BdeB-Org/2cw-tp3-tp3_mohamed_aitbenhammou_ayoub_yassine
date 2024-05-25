@@ -99,14 +99,19 @@ fetch(urlTableMagasin)
             // Ajout d'un élément de type "div" dans la page magasin.html.
             let divMagasin = createNode("div");
             divMagasin.className = "div-magasin-afficher";
-            
             append(listeMagasins, divMagasin);
-            window.alert("Test");
+            
             // Nom du magasin
             let nomMagasin = createNode("h3");
             nomMagasin.className = "nom-magasin";
             nomMagasin.innerHTML = magasin.nom_magasin;
             append(divMagasin, nomMagasin);
+
+            // Adresse du magasin
+            let adresseMagasin = createNode("p");
+            adresseMagasin.className = "adresse-magasin";
+            adresseMagasin.innerHTML = `Adresse: ${magasin.adresse}`;
+            append(divMagasin, adresseMagasin);
 
 
             
