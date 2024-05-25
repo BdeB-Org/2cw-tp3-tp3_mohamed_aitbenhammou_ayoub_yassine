@@ -1,4 +1,9 @@
+const urlTableMagasin = "http://localhost:8080/ords/TP3/magasin/";
+const urlTableClient = "http://localhost:8080/ords/TP3/client/";
 const urlTableProduit = "http://localhost:8080/ords/TP3/produit/";
+const urlTablePanier = "http://localhost:8080/ords/TP3/panier/";
+const urlTableFacture = "http://localhost:8080/ords/TP3/facture/";
+
 
 // Créer un élément html passé en paramètre.
 function createNode(element) {
