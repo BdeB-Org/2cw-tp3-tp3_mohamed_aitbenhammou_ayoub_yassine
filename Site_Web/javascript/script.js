@@ -61,7 +61,7 @@ fetch(urlTableProduit)
             // Quantité du produit
             let quantiteProduit = createNode("p");
             quantiteProduit.className = "quantite-produit";
-            quantiteProduit.innerHTML = `Quantité disponible ${produit.quantite}`;
+            quantiteProduit.innerHTML = `Quantité disponible: ${produit.quantite}`;
             append(divInformationProduit, quantiteProduit);
 
             // Prix du produit
@@ -75,11 +75,11 @@ fetch(urlTableProduit)
             magasinVendu.className = "magasin-vendu";
 
             if (parseInt(produit.magasin_id_magasin) == 1) {
-                magasinVendu.innerHTML = `Produit disponible chez: Ludo Montréal<br>Numéro du magasin est ${produit.magasin_id_magasin}`;
+                magasinVendu.innerHTML = `Vendu par: Ludo Montréal<br><br>Numéro du magasin: ${produit.magasin_id_magasin}`;
             } else if (parseInt(produit.magasin_id_magasin == 2)) {
-                magasinVendu.innerHTML = `Produit disponible chez: Ludo Laval<br>Numéro du magasin est ${produit.magasin_id_magasin}`;
+                magasinVendu.innerHTML = `Vendu par: Ludo Laval<br><br>Numéro du magasin: ${produit.magasin_id_magasin}`;
             } else {
-                magasinVendu.innerHTML = `Produit disponible chez: Ludo Toronto<br>Numéro du magasin est ${produit.magasin_id_magasin}`;
+                magasinVendu.innerHTML = `Vendu par: Ludo Toronto<br><br>Numéro du magasin: ${produit.magasin_id_magasin}`;
             }
             append(divInformationProduit, magasinVendu);
 
