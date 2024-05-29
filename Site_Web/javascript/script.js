@@ -18,86 +18,88 @@ function append(parent, el) {
 
 
 //Afficher tous les produits de la table "produit" dynamiquement dans la page "produit.html".
-const listeProduits = document.getElementById("produit");
-fetch(urlTableProduit)
-    .then((resp) => resp.json())
-    .then(function (data) {
-        let produits = data.items;
-        return produits.map(function (produit) {
+function afficherProduits() {
+    const listeProduits = document.getElementById("produit");
+    fetch(urlTableProduit)
+        .then((resp) => resp.json())
+        .then(function (data) {
+            let produits = data.items;
+            return produits.map(function (produit) {
 
-            // Ajout d'un élément de type "div" dans la page produits.html.
-            let divProduit = createNode("div");
-            divProduit.className = "div-produit-afficher";
-            append(listeProduits, divProduit);
+                // Ajout d'un élément de type "div" dans la page produits.html.
+                let divProduit = createNode("div");
+                divProduit.className = "div-produit-afficher";
+                append(listeProduits, divProduit);
 
-            // Div image
-            let divImageLaptop = createNode("div");
-            divImageLaptop.className = "div-image-laptop";
-            append(divProduit, divImageLaptop)
+                // Div image
+                let divImageLaptop = createNode("div");
+                divImageLaptop.className = "div-image-laptop";
+                append(divProduit, divImageLaptop)
 
-            // Image
-            let imageLaptop = createNode("img");
-            imageLaptop.className = "image-laptop";
-            // window.alert(produit.chemin_image);
-            imageLaptop.src = "../image/" + produit.chemin_image;
-            append(divImageLaptop, imageLaptop);
+                // Image
+                let imageLaptop = createNode("img");
+                imageLaptop.className = "image-laptop";
+                // window.alert(produit.chemin_image);
+                imageLaptop.src = "../image/" + produit.chemin_image;
+                append(divImageLaptop, imageLaptop);
 
-            // Div informations du produit
-            let divInformationProduit = createNode("div");
-            divInformationProduit.className = "div-informations-produit"
-            append(divProduit, divInformationProduit);
+                // Div informations du produit
+                let divInformationProduit = createNode("div");
+                divInformationProduit.className = "div-informations-produit"
+                append(divProduit, divInformationProduit);
 
-            // Nom du produit
-            let nomProduit = createNode("h3");
-            nomProduit.className = "nom-produit";
-            nomProduit.innerHTML = produit.nom_produit;
-            append(divInformationProduit, nomProduit);
+                // Nom du produit
+                let nomProduit = createNode("h3");
+                nomProduit.className = "nom-produit";
+                nomProduit.innerHTML = produit.nom_produit;
+                append(divInformationProduit, nomProduit);
 
-            // Description du produit
-            let descriptionProduit = createNode("p");
-            descriptionProduit.className = "description-produits"
-            descriptionProduit.innerHTML = produit.description;
-            append(divInformationProduit, descriptionProduit);
+                // Description du produit
+                let descriptionProduit = createNode("p");
+                descriptionProduit.className = "description-produits"
+                descriptionProduit.innerHTML = produit.description;
+                append(divInformationProduit, descriptionProduit);
 
-            // Quantité du produit
-            let quantiteProduit = createNode("p");
-            quantiteProduit.className = "quantite-produit";
-            quantiteProduit.innerHTML = `Quantité disponible: ${produit.quantite}`;
-            append(divInformationProduit, quantiteProduit);
+                // Quantité du produit
+                let quantiteProduit = createNode("p");
+                quantiteProduit.className = "quantite-produit";
+                quantiteProduit.innerHTML = `Quantité disponible: ${produit.quantite}`;
+                append(divInformationProduit, quantiteProduit);
 
-            // Prix du produit
-            let prixProduit = createNode("p");
-            prixProduit.className = "prix-produit"
-            prixProduit.innerHTML = `Prix: ${produit.prix}`;
-            append(divInformationProduit, prixProduit);
+                // Prix du produit
+                let prixProduit = createNode("p");
+                prixProduit.className = "prix-produit"
+                prixProduit.innerHTML = `Prix: ${produit.prix}`;
+                append(divInformationProduit, prixProduit);
 
-            // Magasin où le produit est disponible
-            let magasinVendu = createNode("p");
-            magasinVendu.className = "magasin-vendu";
+                // Magasin où le produit est disponible
+                let magasinVendu = createNode("p");
+                magasinVendu.className = "magasin-vendu";
 
-            if (parseInt(produit.magasin_id_magasin) == 1) {
-                magasinVendu.innerHTML = `Vendu par: Ludo Montréal<br><br>Numéro du magasin: ${produit.magasin_id_magasin}`;
-            } else if (parseInt(produit.magasin_id_magasin == 2)) {
-                magasinVendu.innerHTML = `Vendu par: Ludo Laval<br><br>Numéro du magasin: ${produit.magasin_id_magasin}`;
-            } else {
-                magasinVendu.innerHTML = `Vendu par: Ludo Toronto<br><br>Numéro du magasin: ${produit.magasin_id_magasin}`;
-            }
-            append(divInformationProduit, magasinVendu);
+                if (parseInt(produit.magasin_id_magasin) == 1) {
+                    magasinVendu.innerHTML = `Vendu par: Ludo Montréal<br><br>Numéro du magasin: ${produit.magasin_id_magasin}`;
+                } else if (parseInt(produit.magasin_id_magasin == 2)) {
+                    magasinVendu.innerHTML = `Vendu par: Ludo Laval<br><br>Numéro du magasin: ${produit.magasin_id_magasin}`;
+                } else {
+                    magasinVendu.innerHTML = `Vendu par: Ludo Toronto<br><br>Numéro du magasin: ${produit.magasin_id_magasin}`;
+                }
+                append(divInformationProduit, magasinVendu);
 
-            // Bouton ajouter au panier
-            let boutonAjouterAuPanier = createNode("button");
-            boutonAjouterAuPanier.className = "bouton-ajouter-au-panier"
-            boutonAjouterAuPanier.innerHTML = "Ajouter au panier";
-            boutonAjouterAuPanier.onclick = function() {
-                alert("Le produit a été ajouté au panier.");
-            }
-            append(divProduit, boutonAjouterAuPanier);
+                // Bouton ajouter au panier
+                let boutonAjouterAuPanier = createNode("button");
+                boutonAjouterAuPanier.className = "bouton-ajouter-au-panier"
+                boutonAjouterAuPanier.innerHTML = "Ajouter au panier";
+                boutonAjouterAuPanier.onclick = function() {
+                    alert("Le produit a été ajouté au panier.");
+                }
+                append(divProduit, boutonAjouterAuPanier);
 
+            });
+        })
+        .catch(function (error) {
+            console.log((error));
         });
-    })
-    .catch(function (error) {
-        console.log((error));
-    });
+}
 
 
     
@@ -170,4 +172,13 @@ function demanderNumeroClientEtAfficherPanier() {
     } while (numeroClientPanier < 1 || numeroClientPanier > nombrePanier);
     const urlTablePanierClient = urlTablePanier + numeroClientPanier;
     console.log(urlTablePanierClient);
+
+    fetch(urlTablePanierClient)
+    .then((resp) => resp.json())
+    .then(function (date) {
+
+    })
+    .catch(function (error) {
+        console.log((error));
+    })
 }
