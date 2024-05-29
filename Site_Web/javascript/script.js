@@ -198,7 +198,7 @@ function demanderNumeroClientEtAfficherPanier() {
 
                 // Ajout d'un élément de type "div" dans la page magasin.html.
                 let divProduitPanier = createNode("div");
-                divProduit.className = "div-panier-produit-afficher";
+                divProduitPanier.className = "div-panier-produit-afficher";
                 append(panier, divProduitPanier);
 
                 // Création d'un élément div qui contiendra l'image du produit dans le panier.  
@@ -206,12 +206,17 @@ function demanderNumeroClientEtAfficherPanier() {
                 divImageProduitPanier.className = "div-image-produit-panier";
                 append(divProduitPanier, divImageProduitPanier);
 
-                // Image
+                // Affichage de l'image du produit dans le panier.
                 let imageProduitPanier = createNode("img");
                 imageProduitPanier.className = "image-laptop";
                 imageProduitPanier.src = "../image/" + produit.chemin_image;
                 append(divImageProduitPanier, imageProduitPanier);
                 
+                // Div pour l'affichage des informations du produit dans le panier.
+                let divInformationProduitPanier = createNode("div");
+                divInformationProduitPanier.className = "div-informations-produit"
+                append(divProduitPanier, divInformationProduitPanier);
+
                 
                 
             }
