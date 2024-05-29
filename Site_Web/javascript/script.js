@@ -217,6 +217,14 @@ function demanderNumeroClientEtAfficherPanier() {
                 divInformationProduitPanier.className = "div-informations-produit"
                 append(divProduitPanier, divInformationProduitPanier);
 
+                // Affichage du nom du produit dans le panier.
+                let nomProduitPanier = createNode("h3");
+                nomProduitPanier.className = "nom-produit";
+                nomProduitPanier.innerHTML = produit.nom_produit;
+                append(divInformationProduitPanier, nomProduitPanier);
+
+
+
                 
                 
             }
