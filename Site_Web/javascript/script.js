@@ -172,11 +172,13 @@ function demanderNumeroClientEtAfficherPanier() {
     } while (numeroClientPanier < 1 || numeroClientPanier > nombrePanier);
     const urlTablePanierClient = urlTablePanier + numeroClientPanier;
     console.log(urlTablePanierClient);
-
+    let idPanierClient;
     fetch(urlTablePanierClient)
     .then((resp) => resp.json())
-    .then(function (date) {
-
+    .then(function (data) {
+        let panier = data;
+        idPanierClient = panier.id_panier;
+        alert(idPanierClient);
     })
     .catch(function (error) {
         console.log((error));
