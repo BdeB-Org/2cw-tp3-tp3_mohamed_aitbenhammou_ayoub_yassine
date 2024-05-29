@@ -172,6 +172,8 @@ function demanderNumeroClientEtAfficherPanier() {
     } while (numeroClientPanier < 1 || numeroClientPanier > nombrePanier);
     const urlTablePanierClient = urlTablePanier + numeroClientPanier;
     console.log(urlTablePanierClient);
+
+    // Fonction fetch afin d'obtenir le numéro de panier du client.
     let idPanierClient;
     fetch(urlTablePanierClient)
     .then((resp) => resp.json())
@@ -179,6 +181,16 @@ function demanderNumeroClientEtAfficherPanier() {
         let panier = data;
         idPanierClient = panier.id_panier;
         alert(idPanierClient);
+    })
+    .catch(function (error) {
+        console.log((error));
+    })
+
+    // Fonction fetch afin d'obtenir les informations du porduit dans le panier en fonction du numéro de panier.
+    fetch(urlTableProduit)
+    .then((resp) => resp.json())
+    .then(function (data) {
+
     })
     .catch(function (error) {
         console.log((error));
