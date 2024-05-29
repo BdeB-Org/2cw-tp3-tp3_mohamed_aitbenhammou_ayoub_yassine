@@ -198,9 +198,11 @@ function demanderNumeroClientEtAfficherPanier() {
             if (produit.panier_id_panier == idPanierClient) {
 
                 // Ajout d'un élément de type "div" dans la page magasin.html.
-                let divMagasin = createNode("div");
-                divMagasin.className = "div-magasin-afficher";
-                append(listeMagasins, divMagasin);
+                let divProduitPanier = createNode("div");
+                divProduit.className = "div-panier-produit-afficher";
+                append(panier, divProduitPanier);
+                
+                
                 
             }
         })
