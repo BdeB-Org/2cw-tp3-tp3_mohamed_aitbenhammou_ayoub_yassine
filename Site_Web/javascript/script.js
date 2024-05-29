@@ -187,10 +187,23 @@ function demanderNumeroClientEtAfficherPanier() {
     })
 
     // Fonction fetch afin d'obtenir les informations du porduit dans le panier en fonction du numéro de panier.
+    let panier = document.getElementById("panier");
     fetch(urlTableProduit)
     .then((resp) => resp.json())
     .then(function (data) {
+        let produits = data.items;
 
+        return produits.map(function (produit) {
+            // Vérifier si le produit appartient au panier du client.
+            if (produit.panier_id_panier == idPanierClient) {
+
+                // Ajout d'un élément de type "div" dans la page magasin.html.
+                let divMagasin = createNode("div");
+                divMagasin.className = "div-magasin-afficher";
+                append(listeMagasins, divMagasin);
+                
+            }
+        })
     })
     .catch(function (error) {
         console.log((error));
