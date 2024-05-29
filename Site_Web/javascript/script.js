@@ -154,3 +154,17 @@ fetch(urlTableMagasin)
     .catch(function (error) {
         console.log((error));
     })
+
+
+// Demander le numéro du client et afficher dynamiquement son panier.
+function demanderNumeroClientEtAfficherPanier() {
+    const nombrePanier = 10;
+    let numeroClientPanier;
+    do {
+        numeroClientPanier = window.prompt("Veuillez saisir le numéro du client dont vous voulez voir le panier: ");
+        if (numeroClientPanier < 1 || numeroClientPanier > nombrePanier) {
+            window.alert(`Le numéro de client est invalide, il doit être entre 0 et ${nombrePanier}.`);
+        }
+    } while (numeroClientPanier < 1 || numeroClientPanier > nombrePanier);
+    const urlTablePanierClient = urlTablePanier ;
+}
