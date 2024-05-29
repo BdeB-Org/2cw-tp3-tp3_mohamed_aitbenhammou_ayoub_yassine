@@ -39,7 +39,6 @@ function afficherProduits() {
                 // Image
                 let imageLaptop = createNode("img");
                 imageLaptop.className = "image-laptop";
-                // window.alert(produit.chemin_image);
                 imageLaptop.src = "../image/" + produit.chemin_image;
                 append(divImageLaptop, imageLaptop);
 
@@ -202,10 +201,16 @@ function demanderNumeroClientEtAfficherPanier() {
                 divProduit.className = "div-panier-produit-afficher";
                 append(panier, divProduitPanier);
 
-                // Création d'un élément div qui contiendra l'image du produit dans le panier.
+                // Création d'un élément div qui contiendra l'image du produit dans le panier.  
                 let divImageProduitPanier = createNode("div");
-                divImageLaptop.className = "div-image-produit-panier";
+                divImageProduitPanier.className = "div-image-produit-panier";
                 append(divProduitPanier, divImageProduitPanier);
+
+                // Image
+                let imageProduitPanier = createNode("img");
+                imageProduitPanier.className = "image-laptop";
+                imageProduitPanier.src = "../image/" + produit.chemin_image;
+                append(divImageProduitPanier, imageProduitPanier);
                 
                 
                 
