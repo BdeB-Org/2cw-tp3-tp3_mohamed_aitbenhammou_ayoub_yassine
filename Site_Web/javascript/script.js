@@ -235,6 +235,18 @@ function demanderNumeroClientEtAfficherPanier() {
                 prixProduitPanier.innerHTML = `Prix: ${produit.prix}`;
                 append(divInformationProduitPanier, prixProduitPanier);
 
+                // Affichage du magasin qui livrera le produit.
+                let magasinLivrerProduit = createNode("p");
+                magasinLivrerProduit.className = "magasin-livrer-produit";
+                if (parseInt(produit.magasin_id_magasin) == 1) {
+                    magasinLivrerProduit.innerHTML = `Le produit sera livré par: Ludo Montréal<br><br>Numéro du magasin: ${produit.magasin_id_magasin}`;
+                } else if (parseInt(produit.magasin_id_magasin == 2)) {
+                    magasinLivrerProduit.innerHTML = `Le produit sera livré par: Ludo Laval<br><br>Numéro du magasin: ${produit.magasin_id_magasin}`;
+                } else {
+                    magasinLivrerProduit.innerHTML = `Le produit sera livré par: Ludo Toronto<br><br>Numéro du magasin: ${produit.magasin_id_magasin}`;
+                }
+                append(divInformationProduitPanier, magasinLivrerProduit);
+
 
 
 
