@@ -208,26 +208,34 @@ function demanderNumeroClientEtAfficherPanier() {
 
                 // Affichage de l'image du produit dans le panier.
                 let imageProduitPanier = createNode("img");
-                imageProduitPanier.className = "image-laptop";
+                imageProduitPanier.className = "image-laptop-panier";
                 imageProduitPanier.src = "../image/" + produit.chemin_image;
                 append(divImageProduitPanier, imageProduitPanier);
                 
                 // Div pour l'affichage des informations du produit dans le panier.
                 let divInformationProduitPanier = createNode("div");
-                divInformationProduitPanier.className = "div-informations-produit"
+                divInformationProduitPanier.className = "div-informations-produit-panier"
                 append(divProduitPanier, divInformationProduitPanier);
 
                 // Affichage du nom du produit dans le panier.
                 let nomProduitPanier = createNode("h3");
-                nomProduitPanier.className = "nom-produit";
+                nomProduitPanier.className = "nom-produit-panier";
                 nomProduitPanier.innerHTML = produit.nom_produit;
                 append(divInformationProduitPanier, nomProduitPanier);
 
                 // Affichage de la description du produit dans le panier.
                 let descriptionProduitPanier = createNode("p");
-                descriptionProduitPanier.className = "description-produits"
+                descriptionProduitPanier.className = "description-produit-panier"
                 descriptionProduitPanier.innerHTML = produit.description;
                 append(divInformationProduitPanier, descriptionProduitPanier);
+
+                // Affichage du prix du produit dans le panier
+                let prixProduitPanier = createNode("p");
+                prixProduitPanier.className = "prix-produit-panier"
+                prixProduitPanier.innerHTML = `Prix: ${produit.prix}`;
+                append(divInformationProduitPanier, prixProduitPanier);
+
+
 
 
 
