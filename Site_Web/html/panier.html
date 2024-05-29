@@ -9,67 +9,39 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <!-- Lien vers le fichier CSS externe -->
     <link rel="stylesheet" href="../css/style.css">
+
+    <script src="../javascript/script.js"></script>
+
 </head>
-<body>
-    <!-- En-tête de la page -->
-    <header>
-        <div class="container">
-            <h1>Votre Panier</h1> <!-- Titre de l'en-tête -->
-            <nav>
-                <ul>
-                    <li><a href="index.html">Accueil</a></li> <!-- Lien vers la page d'accueil -->
-                    <li><a href="products.html">Produits</a></li> <!-- Lien vers la page des produits -->
-                    <li><a href="contact.html">Contact</a></li> <!-- Lien vers la page de contact -->
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <!-- Contenu principal du panier -->
-    <main class="container">
-        <h2>Articles dans votre panier</h2> <!-- Titre de la section principale -->
-        <div class="cart">
-            <!-- Liste des produits dans le panier -->
-            <div class="cart-items">
-                <div class="cart-item">
-                    <img src="asus-zenbook-14-oled-ux3405-hero-scaled.webp" alt="Produit 1"> <!-- Image du produit 1 -->
-                    <div class="item-details">
-                        <h3>Asus-zenbook-14-oled-ux3405-hero-scaled</h3> <!-- Titre du produit 1 -->
-                        <p>Quantité: <input type="number" class="quantity" value="1" min="1" data-price="100"></p> <!-- Champ de quantité pour le produit 1 -->
-                        <p>Prix total: <span class="item-total-price">100</span>$</p> <!-- Prix total pour le produit 1 -->
-                        <button class="remove-btn">Retirer</button> <!-- Bouton pour retirer le produit 1 -->
-                    </div>
-                </div>
-                <div class="cart-item">
-                    <img src="acer-swift-edge-16-test-2023-1-scaled.webp" alt="Produit 2"> <!-- Image du produit 2 -->
-                    <div class="item-details">
-                        <h3>Acer-swift-edge-16-test-2023-1-scaled</h3> <!-- Titre du produit 2 -->
-                        <p>Quantité: <input type="number" class="quantity" value="1" min="1" data-price="150"></p> <!-- Champ de quantité pour le produit 2 -->
-                        <p>Prix total: <span class="item-total-price">150</span>$</p> <!-- Prix total pour le produit 2 -->
-                        <button class="remove-btn">Retirer</button> <!-- Bouton pour retirer le produit 2 -->
-                    </div>
-                </div>
-            </div>
-            <!-- Résumé du panier -->
-            <div class="cart-summary">
-                <h2>Résumé du Panier</h2> <!-- Titre du résumé du panier -->
-                <p>Sous-total: <span id="subtotal">250</span>$</p> <!-- Sous-total du panier -->
-                <p>Taxes: <span id="taxes">50</span>$</p> <!-- Taxes du panier -->
-                <p>Total: <span id="total">300</span>$</p> <!-- Total du panier -->
-                <button class="checkout-btn">Passer à la Caisse</button> <!-- Bouton pour passer à la caisse -->
-            </div>
-        </div>
-    </main>
+<body onload="demanderNumeroClientEtAfficherPanier()">
 
-    <!-- Pied de page -->
-    <footer>
-        <div class="container">
-            <p>&copy; Boutique produits électroniques. Tous droits réservés.</p> <!-- Droits d'auteur -->
+    <!-- Barre de navigation de la page -->
+    <div class="bannière">
+        <div class="barre-de-navigation">
+            <h1 class="nom-site">Ludo</h1>
+            <ul>
+                <li><a href="../index.html">Page d'accueil </a></li>
+                <li><a href="magasin.html">Magasins </a></li>
+                <li><a href="produits.html">Produits</a></li>    
+                <li><a href="panier.html">Panier</a></li>
+            </ul>
         </div>
-    </footer>
+    </div>
 
-    <!-- Lien vers le fichier JavaScript externe -->
-    <script src="../javascript/script.js"></script> <!-- Chargement du script JavaScript -->
+
+    
+    <!-- Titre principale de la page -->    
+    <h1 class="titre-afficher-panier">Articles dans votre panier</h1>
+    
+    <!-- Affichage dynamique des produits dans le panier en utilisant javascript -->
+    <div id="panier" class="panier">
+    
+    </div>
+
+
+    <!-- Relier la page au fichier javascript -->
+    
 </body>
 </html>
 

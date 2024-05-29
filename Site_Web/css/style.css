@@ -17,13 +17,14 @@ body {
 }
 
 
+/* Centrer le message d'accueil de la page index.html. */
 .message-accueil {
     margin-top: 10%;
     text-align: center;
     font-size: 25px;
 }
 
-
+/* Style pour le bouton "Nos produits" dans la page index.html. */
 .boutton-nos-produits {
     margin-top: 50px;
     padding: 15px;
@@ -33,6 +34,7 @@ body {
     font-size: 15px;
 }
 
+/* Style pour l'effet lorsque la souris passe par dessus le bouton dans la page index.html. */
 .boutton-nos-produits:hover {
     transition-duration: 0.15s;
     background-color: rgb(85, 78, 78);
@@ -105,7 +107,7 @@ label {
 
 /* Style pour la page inscription.html. */
 
-.titre-afficher-produits {
+.titre-afficher-produits, .titre-afficher-magasins, .titre-afficher-panier {
     margin-left: 10%;
 }
 
@@ -114,12 +116,11 @@ label {
 /* Style pour l'affichage dynamique des produits dans la page produits.html. */
 
 .div-produit-afficher {
-    width: 420px;
+    width: 500px;
     margin-top: 5%;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 12%;
     margin-bottom: 8%;
-    height: 250px;
+    height: 280px;
     box-shadow: 0px 0px 4px;
     align-items: center;
     float: left;
@@ -137,14 +138,15 @@ label {
 
 .description-produits {
     margin-top: 15%;
+    margin-bottom: 2%;
     width: 100%;
     height: 40px;
 }
 
 .quantite-produit {
-    width: 100%;
+    padding: 0px;
     height: 20px;
-    margin-top: 20%;
+    margin-top: 5%;
 }
 
 
@@ -152,7 +154,9 @@ label {
     width: 100%;
     margin-top: 0px;
     height: 20px;
+    margin-bottom: 0px;
 }
+
 
 
 .bouton-ajouter-au-panier {
@@ -179,7 +183,8 @@ label {
 .image-laptop {
     width: 98%;
     height: 100%;
-    object-fit: cover;
+    /*object-fit: cover;*/
+    transform: scale(0.95);
 }
 
 
@@ -189,4 +194,26 @@ label {
     display: flex;
     flex-direction: column;
     float: right;
+}
+
+
+/* Style pou déplacer les magasins vers la droite et faire de la place entre eux dans la page "magasin.html". */
+.div-magasin-afficher {
+    margin-left: 25%;
+    margin-top: 5%;
+    border: 2px solid black;
+    border-radius: 20px;
+    width: 50%;
+}
+
+/* Style pour l'effet lorsque la souris passe par-dessus le div pour l'affichage des magasin. */
+.div-magasin-afficher:hover {
+    transition-duration: 0.15s;
+    background-color: white;
+    transform: scale(1.15);
+}
+
+/* Style pour le positionnement des informations des magasins dans le div des magasins.*/
+.nom-magasin, .numero-magasin, .adresse-magasin, .numero-telephone-magasin, .horaire-ouverture-magasin {
+    margin-left: 5%;
 }
