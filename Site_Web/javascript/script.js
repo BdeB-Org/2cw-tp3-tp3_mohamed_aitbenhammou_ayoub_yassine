@@ -223,6 +223,12 @@ function demanderNumeroClientEtAfficherPanier() {
                 nomProduitPanier.innerHTML = produit.nom_produit;
                 append(divInformationProduitPanier, nomProduitPanier);
 
+                // Affichage de la description du produit dans le panier.
+                let descriptionProduitPanier = createNode("p");
+                descriptionProduitPanier.className = "description-produits"
+                descriptionProduitPanier.innerHTML = produit.description;
+                append(divInformationProduitPanier, descriptionProduitPanier);
+
 
 
                 
