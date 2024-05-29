@@ -103,57 +103,59 @@ fetch(urlTableProduit)
     
 
 // Afficher tous les magasins dynamiquement dans la page "magasin.html".
-const listeMagasins = document.getElementById("magasin");
-fetch(urlTableMagasin)
-    .then((resp) => resp.json())
-    .then(function (data) {
-        let magasins = data.items;
-        return magasins.map(function (magasin) {
-            
-            // Ajout d'un élément de type "div" dans la page magasin.html.
-            let divMagasin = createNode("div");
-            divMagasin.className = "div-magasin-afficher";
-            append(listeMagasins, divMagasin);
-            
-            // Nom du magasin
-            let nomMagasin = createNode("h3");
-            nomMagasin.className = "nom-magasin";
-            nomMagasin.innerHTML = magasin.nom_magasin;
-            append(divMagasin, nomMagasin);
+function afficherMagasins() {
+    const listeMagasins = document.getElementById("magasin");
+    fetch(urlTableMagasin)
+        .then((resp) => resp.json())
+        .then(function (data) {
+            let magasins = data.items;
+            return magasins.map(function (magasin) {
+                
+                // Ajout d'un élément de type "div" dans la page magasin.html.
+                let divMagasin = createNode("div");
+                divMagasin.className = "div-magasin-afficher";
+                append(listeMagasins, divMagasin);
+                
+                // Nom du magasin
+                let nomMagasin = createNode("h3");
+                nomMagasin.className = "nom-magasin";
+                nomMagasin.innerHTML = magasin.nom_magasin;
+                append(divMagasin, nomMagasin);
 
-            // Numéro du magasin
-            let numeroMagasin = createNode("p");
-            numeroMagasin.className = "numero-magasin";
-            numeroMagasin.innerHTML = `Numéro du magasin: ${magasin.id_magasin}`;
-            append(divMagasin, numeroMagasin);
+                // Numéro du magasin
+                let numeroMagasin = createNode("p");
+                numeroMagasin.className = "numero-magasin";
+                numeroMagasin.innerHTML = `Numéro du magasin: ${magasin.id_magasin}`;
+                append(divMagasin, numeroMagasin);
 
-            // Adresse du magasin
-            let adresseMagasin = createNode("p");
-            adresseMagasin.className = "adresse-magasin";
-            adresseMagasin.innerHTML = `Adresse: ${magasin.adresse}`;
-            append(divMagasin, adresseMagasin);
+                // Adresse du magasin
+                let adresseMagasin = createNode("p");
+                adresseMagasin.className = "adresse-magasin";
+                adresseMagasin.innerHTML = `Adresse: ${magasin.adresse}`;
+                append(divMagasin, adresseMagasin);
 
-            // Numéro de téléphone
-            let numeroTelephoneMagasin = createNode("p");
-            numeroTelephoneMagasin.className = "numero-telephone-magasin";
-            numeroTelephoneMagasin.innerHTML = `Numéro de téléphone: ${magasin.numero_telephone}`;
-            append(divMagasin, numeroTelephoneMagasin);
+                // Numéro de téléphone
+                let numeroTelephoneMagasin = createNode("p");
+                numeroTelephoneMagasin.className = "numero-telephone-magasin";
+                numeroTelephoneMagasin.innerHTML = `Numéro de téléphone: ${magasin.numero_telephone}`;
+                append(divMagasin, numeroTelephoneMagasin);
 
-            // Horaire d'ouverture
-            let horarireOuvertureMagasin = createNode("p");
-            horarireOuvertureMagasin.className = "horaire-ouverture-magasin";
-            horarireOuvertureMagasin.innerHTML = `Horaire d'ouverture: ${magasin.horaire_ouverture}`;
-            append(divMagasin, horarireOuvertureMagasin);
+                // Horaire d'ouverture
+                let horarireOuvertureMagasin = createNode("p");
+                horarireOuvertureMagasin.className = "horaire-ouverture-magasin";
+                horarireOuvertureMagasin.innerHTML = `Horaire d'ouverture: ${magasin.horaire_ouverture}`;
+                append(divMagasin, horarireOuvertureMagasin);
 
 
-            
+                
 
-        });
+            });
 
-    })
-    .catch(function (error) {
-        console.log((error));
-    })
+        })
+        .catch(function (error) {
+            console.log((error));
+        })
+}
 
 
 // Demander le numéro du client et afficher dynamiquement son panier.
@@ -163,8 +165,9 @@ function demanderNumeroClientEtAfficherPanier() {
     do {
         numeroClientPanier = window.prompt("Veuillez saisir le numéro du client dont vous voulez voir le panier: ");
         if (numeroClientPanier < 1 || numeroClientPanier > nombrePanier) {
-            window.alert(`Le numéro de client est invalide, il doit être entre 0 et ${nombrePanier}.`);
+            window.alert(`Le numéro de client est invalide, il doit être entre 1 et ${nombrePanier}.`);
         }
     } while (numeroClientPanier < 1 || numeroClientPanier > nombrePanier);
-    const urlTablePanierClient = urlTablePanier ;
+    const urlTablePanierClient = urlTablePanier + numeroClientPanier;
+    console.log(urlTablePanierClient);
 }
