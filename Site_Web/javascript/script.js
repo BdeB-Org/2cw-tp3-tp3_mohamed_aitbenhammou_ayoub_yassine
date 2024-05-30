@@ -68,7 +68,7 @@ function afficherProduits() {
                 // Prix du produit
                 let prixProduit = createNode("p");
                 prixProduit.className = "prix-produit"
-                prixProduit.innerHTML = `Prix: ${produit.prix}`;
+                prixProduit.innerHTML = `Prix: ${produit.prix} $`;
                 append(divInformationProduit, prixProduit);
 
                 // Magasin où le produit est disponible
@@ -159,18 +159,22 @@ function afficherMagasins() {
 }
 
 
+
 // Demander le numéro du client et afficher dynamiquement son panier.
+
 function demanderNumeroClientEtAfficherPanier() {
+    let numeroClient;
     const nombrePanier = 10;
-    let numeroClientPanier;
     do {
-        numeroClientPanier = window.prompt("Veuillez saisir le numéro du client dont vous voulez voir le panier: ");
-        if (numeroClientPanier < 1 || numeroClientPanier > nombrePanier) {
+        numeroClient = window.prompt("Veuillez saisir le numéro du client dont vous voulez voir le panier: ");
+        if (numeroClient < 1 || numeroClient > nombrePanier) {
             window.alert(`Le numéro de client est invalide, il doit être entre 1 et ${nombrePanier}.`);
         }
-    } while (numeroClientPanier < 1 || numeroClientPanier > nombrePanier);
-    const urlTablePanierClient = urlTablePanier + numeroClientPanier;
-    console.log(urlTablePanierClient);
+    } while (numeroClient < 1 || numeroClient > nombrePanier);
+    
+    // Le lien afin d'obtenir le panier du client en fonction de son numéro de client.
+    const urlTablePanierClient = urlTablePanier + numeroClient;
+
 
     // Fonction fetch afin d'obtenir le numéro de panier du client.
     let idPanierClient;
@@ -187,11 +191,18 @@ function demanderNumeroClientEtAfficherPanier() {
 
     // Fonction fetch afin d'obtenir les informations du porduit dans le panier en fonction du numéro de panier.
     let panier = document.getElementById("panier");
+
+    let coutTotal = 0;
+    let nombreProduitsDansPanier = 0;
+    
     fetch(urlTableProduit)
     .then((resp) => resp.json())
     .then(function (data) {
         let produits = data.items;
 
+        
+        
+        
         return produits.map(function (produit) {
             // Vérifier si le produit appartient au panier du client.
             if (produit.panier_id_panier == idPanierClient) {
@@ -218,45 +229,173 @@ function demanderNumeroClientEtAfficherPanier() {
                 append(divProduitPanier, divInformationProduitPanier);
 
                 // Affichage du nom du produit dans le panier.
-                let nomProduitPanier = createNode("h3");
+                let nomProduitPanier = createNode("h4");
                 nomProduitPanier.className = "nom-produit-panier";
                 nomProduitPanier.innerHTML = produit.nom_produit;
                 append(divInformationProduitPanier, nomProduitPanier);
 
-                // Affichage de la description du produit dans le panier.
-                let descriptionProduitPanier = createNode("p");
-                descriptionProduitPanier.className = "description-produit-panier"
-                descriptionProduitPanier.innerHTML = produit.description;
-                append(divInformationProduitPanier, descriptionProduitPanier);
-
+                
                 // Affichage du prix du produit dans le panier
                 let prixProduitPanier = createNode("p");
                 prixProduitPanier.className = "prix-produit-panier"
-                prixProduitPanier.innerHTML = `Prix: ${produit.prix}`;
+                prixProduitPanier.innerHTML = `Prix: ${produit.prix} $`;
                 append(divInformationProduitPanier, prixProduitPanier);
 
                 // Affichage du magasin qui livrera le produit.
                 let magasinLivrerProduit = createNode("p");
                 magasinLivrerProduit.className = "magasin-livrer-produit";
                 if (parseInt(produit.magasin_id_magasin) == 1) {
-                    magasinLivrerProduit.innerHTML = `Le produit sera livré par: Ludo Montréal<br><br>Numéro du magasin: ${produit.magasin_id_magasin}`;
+                    magasinLivrerProduit.innerHTML = "Le produit sera livré par: Ludo Montréal";
                 } else if (parseInt(produit.magasin_id_magasin == 2)) {
-                    magasinLivrerProduit.innerHTML = `Le produit sera livré par: Ludo Laval<br><br>Numéro du magasin: ${produit.magasin_id_magasin}`;
+                    magasinLivrerProduit.innerHTML = "Le produit sera livré par: Ludo Laval";
                 } else {
-                    magasinLivrerProduit.innerHTML = `Le produit sera livré par: Ludo Toronto<br><br>Numéro du magasin: ${produit.magasin_id_magasin}`;
+                    magasinLivrerProduit.innerHTML = "Le produit sera livré par: Ludo Toronto";
                 }
                 append(divInformationProduitPanier, magasinLivrerProduit);
 
+                // Calculer le coût total des produits dans le panier.
+                coutTotal += produit.prix;
+
+                // Calculer le nombre de produits dans le panier.
+                nombreProduitsDansPanier++;
+            }
+        })         
+    })
+    .catch(function (error) {
+        console.log((error));
+    })
+    .finally(function() {
+
+    
+        // Constante pour l'élément "div" qui contiendra le résumé du panier.
+        const resumePanier = document.getElementById("resume-panier");
+
+        // Création d'un div pour afficher les informations résumées du panier du client.
+        let divInformationsPanier = createNode("div");
+        divInformationsPanier.className = "div-informations-panier";
+        append(resumePanier, divInformationsPanier);
+
+        // Affichage d'un titre pour le résumé du panier.
+        let titreResumePanier = createNode("h2");
+        titreResumePanier.className = "titre-resume-panier";
+        titreResumePanier.innerHTML = "Résumé de votre panier";
+        append(divInformationsPanier, titreResumePanier);
+
+        // Affichage du nombre de produits dans le panier.
+        let affichageNombreProduitsPanier = createNode("p");
+        affichageNombreProduitsPanier.className = "affichage-nombre-produits-panier";
+        affichageNombreProduitsPanier.innerHTML = `Nombre de produits dans le panier: ${nombreProduitsDansPanier}`;
+        append(divInformationsPanier, affichageNombreProduitsPanier);
+
+        // Affichage du coût total des produits avant les taxes dans le panier.
+        let affichageCoutTotalPanierAvantTaxes = createNode("p");
+        affichageCoutTotalPanierAvantTaxes.className = "affichage-cout-total-panier-avant-taxes";
+        affichageCoutTotalPanierAvantTaxes.innerHTML = `Coût total avant taxes: ${coutTotal} $`;
+        append(divInformationsPanier, affichageCoutTotalPanierAvantTaxes);
+
+        // Affichage de la taxe sur les produits et les services (TPS).
+        let affichageTaxeProduitsEtServices = createNode("p");
+        affichageTaxeProduitsEtServices.className = "affichage-taxe-produits-services";
+        affichageTaxeProduitsEtServices.innerHTML = `Taxe sur les produits et les services (TPS): ${coutTotal * 0.05} $`;
+        append(divInformationsPanier, affichageTaxeProduitsEtServices);
+
+        // Affichage de la taxe de vente du Québec (TVQ).
+        let affichageTaxeVenteQuebec = createNode("p");
+        affichageTaxeVenteQuebec.className = "affichage-taxe-vente-Quebec";
+        affichageTaxeVenteQuebec.innerHTML = `Taxe de vente du Québec (TVQ): ${coutTotal * 0.0997} $`;
+        append(divInformationsPanier, affichageTaxeVenteQuebec);
+
+        // Affichage du coût total des produits après taxes dans le panier.
+        let affichageCoutTotalPanierApresTaxes = createNode("p");
+        affichageCoutTotalPanierApresTaxes.className ="affichage-cout-total-panier-apres-taxes";
+        affichageCoutTotalPanierApresTaxes.innerHTML = `Coût total après taxes: ${coutTotal * 1.14997} $`;
+        append(divInformationsPanier, affichageCoutTotalPanierApresTaxes);
+        
+    })
+
+    
+}
 
 
 
+function afficherFacture() {
+    let numeroClient;
+    const nombreFacture = 10;
 
-                
+    // Demander le numéro du client afin d'afficher sa facture.
+    do {
+        numeroClient = window.prompt("Veuillez saisir le numéro du client dont vous voulez voir la facture: ");
+        if (numeroClient < 1 || numeroClient > nombreFacture) {
+            window.alert(`Le numéro de client est invalide, il doit être entre 1 et ${nombreFacture}.`);
+        }
+    } while (numeroClient < 1 || numeroClient > nombreFacture);
+
+
+    fetch(urlTableFacture)
+    .then((resp) => resp.json())
+    .then(function (data) {
+        let factures = data.items;
+
+        // L'élément "div" où toutes les informations de la facture seront affichées.
+        let divFacture = document.getElementById("facture");
+
+        alert(numeroClient);
+        return factures.map(function (facture) {
+            if (facture.panier_id_panier == numeroClient) {
+
+                // Affichage du nom du magasin
+                let affichageNomMagasin = createNode("h2");
+                affichageNomMagasin.className = "affichage-nom-magasin-facture";
+                affichageNomMagasin.innerHTML = "Ludo";
+                append(divFacture, affichageNomMagasin);
+
+                // Affichage du id de la facture.
+                let idFacture = createNode("h4");
+                idFacture.className = "id-facture";
+                idFacture.innerHTML = `Facture: id ${facture.id_achat}`;
+                append(divFacture, idFacture);
+
+                // Affichage du coût total de l'achat avant taxes.
+                let coutTotalAchatAvantTaxes = createNode("p");
+                coutTotalAchatAvantTaxes.className = "cout-total-avant-taxes-facture";
+                coutTotalAchatAvantTaxes.innerHTML = `Coût total avant taxes: ${facture.prix_total} $`;
+                append(divFacture, coutTotalAchatAvantTaxes);
+
+                // Affichage de la taxe sur les produits et les services (TPS).
+                let affichageTaxeProduitsEtServicesFacutre = createNode("p");
+                affichageTaxeProduitsEtServicesFacutre.className = "affichage-taxe-produits-services-facture";
+                affichageTaxeProduitsEtServicesFacutre.innerHTML = `Taxe sur les produits et les services (TPS): ${facture.prix_total * 0.05} $`;
+                append(divFacture, affichageTaxeProduitsEtServicesFacutre);
+
+                // Affichage de la taxe de vente du Québec (TVQ).
+                let affichageTaxeVenteQuebecFacture = createNode("p");
+                affichageTaxeVenteQuebecFacture.className = "affichage-taxe-vente-Quebec-facture";
+                affichageTaxeVenteQuebecFacture.innerHTML = `Taxe de vente du Québec (TVQ): ${facture.prix_total * 0.0997} $`;
+                append(divFacture, affichageTaxeVenteQuebecFacture);
+
+                // Affichage du coût total des produits après taxes dans la facture.
+                let affichageCoutTotalApresTaxesFacture = createNode("p");
+                affichageCoutTotalApresTaxesFacture.className ="affichage-cout-total-facture-apres-taxes";
+                affichageCoutTotalApresTaxesFacture.innerHTML = `Coût total après taxes: ${facture.prix_total * 1.14997} $`;
+                append(divFacture, affichageCoutTotalApresTaxesFacture);
+
+                // Affichage de la date d'achat dans la facture.
+                let affichageDateAchat = createNode("p");
+                affichageDateAchat.className = "affichage-date-achat";
+                affichageDateAchat.innerHTML = `Date d'achat: ${facture.date_achat}`;
+                append(divFacture, affichageDateAchat);
+
+                // Affichage d'un message de remerciement pour le client dans sa facture.
+                let messageFacuture = createNode("p");
+                messageFacuture.className = "message-facture";
+                messageFacuture.innerHTML = "Merci d'avoir magasiné chez Ludo<br>Bonne journée";
+                append(divFacture, messageFacuture);
                 
             }
         })
     })
     .catch(function (error) {
-        console.log((error));
+        console.log(error);
     })
-}
+
+}   
