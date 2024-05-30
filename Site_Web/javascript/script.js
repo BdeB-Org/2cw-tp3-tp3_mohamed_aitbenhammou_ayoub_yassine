@@ -290,10 +290,10 @@ function demanderNumeroClientEtAfficherPanier() {
         append(divInformationsPanier, affichageNombreProduitsPanier);
 
         // Affichage du coût total des produits avant les taxes dans le panier.
-        let affichageCoutTotalPanier = createNode("p");
-        affichageCoutTotalPanier.className = "affichage-cout-total-panier";
-        affichageCoutTotalPanier.innerHTML = `Coût total avant taxes: ${coutTotal} $`;
-        append(divInformationsPanier, affichageCoutTotalPanier);
+        let affichageCoutTotalPanierAvantTaxes = createNode("p");
+        affichageCoutTotalPanierAvantTaxes.className = "affichage-cout-total-panier-avant-taxes";
+        affichageCoutTotalPanierAvantTaxes.innerHTML = `Coût total avant taxes: ${coutTotal} $`;
+        append(divInformationsPanier, affichageCoutTotalPanierAvantTaxes);
 
         // Affichage de la taxe sur les produits et les services (TPS).
         let affichageTaxeProduitsEtServices = createNode("p");
@@ -306,6 +306,12 @@ function demanderNumeroClientEtAfficherPanier() {
         affichageTaxeVenteQuebec.className = "affichage-taxe-vente-Quebec";
         affichageTaxeVenteQuebec.innerHTML = `Taxe de vente du Québec (TVQ): ${coutTotal * 0.0997} $`
         append(divInformationsPanier, affichageTaxeVenteQuebec);
+
+        // Affichage du coût total des produits après taxes dans le panier.
+        let affichageCoutTotalPanierApresTaxes = createNode("p");
+        affichageCoutTotalPanierApresTaxes.className ="affichage-cout-total-panier-apres-taxes";
+        affichageCoutTotalPanierApresTaxes.innerHTML = `Coût total après taxes: ${coutTotal * 1.14997} $`
+        append(divInformationsPanier, affichageCoutTotalPanierApresTaxes);
         
     })
 
