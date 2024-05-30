@@ -68,7 +68,7 @@ function afficherProduits() {
                 // Prix du produit
                 let prixProduit = createNode("p");
                 prixProduit.className = "prix-produit"
-                prixProduit.innerHTML = `Prix: ${produit.prix}`;
+                prixProduit.innerHTML = `Prix: ${produit.prix} $`;
                 append(divInformationProduit, prixProduit);
 
                 // Magasin où le produit est disponible
@@ -221,7 +221,7 @@ function demanderNumeroClientEtAfficherPanier() {
                 append(divProduitPanier, divInformationProduitPanier);
 
                 // Affichage du nom du produit dans le panier.
-                let nomProduitPanier = createNode("h3");
+                let nomProduitPanier = createNode("h5");
                 nomProduitPanier.className = "nom-produit-panier";
                 nomProduitPanier.innerHTML = produit.nom_produit;
                 append(divInformationProduitPanier, nomProduitPanier);
@@ -235,7 +235,7 @@ function demanderNumeroClientEtAfficherPanier() {
                 // Affichage du prix du produit dans le panier
                 let prixProduitPanier = createNode("p");
                 prixProduitPanier.className = "prix-produit-panier"
-                prixProduitPanier.innerHTML = `Prix: ${produit.prix}`;
+                prixProduitPanier.innerHTML = `Prix: ${produit.prix} $`;
                 append(divInformationProduitPanier, prixProduitPanier);
 
                 // Affichage du magasin qui livrera le produit.
