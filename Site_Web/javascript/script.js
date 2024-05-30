@@ -266,4 +266,10 @@ function demanderNumeroClientEtAfficherPanier() {
     let divInformationsPanier = createNode("div");
     divInformationsPanier.className = "div-informations-panier";
     append(resumePanier, divInformationsPanier);
+
+    // Affichage d'un titre pour le résumé du panier.
+    let titreResumePanier = createNode("h2");
+    titreResumePanier.className = "titre-resume-panier";
+    titreResumePanier.innerHTML = "Résumé de votre panier";
+    append(divInformationsPanier, titreResumePanier);
 }
