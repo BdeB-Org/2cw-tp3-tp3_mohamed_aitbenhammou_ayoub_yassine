@@ -289,11 +289,17 @@ function demanderNumeroClientEtAfficherPanier() {
         affichageNombreProduitsPanier.innerHTML = `Nombre de produits dans le panier: ${nombreProduitsDansPanier}`;
         append(divInformationsPanier, affichageNombreProduitsPanier);
 
-        // Affichage du coût total des produits dans le panier.
+        // Affichage du coût total des produits avant les taxes dans le panier.
         let affichageCoutTotalPanier = createNode("p");
         affichageCoutTotalPanier.className = "affichage-cout-total-panier";
-        affichageCoutTotalPanier.innerHTML = `Coût total: ${coutTotal} $`;
+        affichageCoutTotalPanier.innerHTML = `Coût total avant taxes: ${coutTotal} $`;
         append(divInformationsPanier, affichageCoutTotalPanier);
+
+        // Affichage de la taxe sur les produits et les services.
+        let affichageTaxeProduitsEtServices = createNode("p");
+        affichageTaxeProduitsEtServices.className = "affichage-taxe-produits-services";
+        affichageTaxeProduitsEtServices.innerHTML = `Taxe sur les produits et les services (TPS): ${coutTotal * 0.05} $`;
+        append(divInformationsPanier, affichageTaxeProduitsEtServices);
         
     })
 
