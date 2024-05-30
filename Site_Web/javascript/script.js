@@ -343,11 +343,19 @@ function afficherFacture() {
         return factures.map(function (facture) {
             if (facture.panier_id_panier == numeroClient) {
 
+                // Affichage du nom du magasin
+                let affichageNomMagasin = createNode("h2");
+                affichageNomMagasin.className = "affichage-nom-magasin-facture";
+                affichageNomMagasin.innerHTML = "Ludo";
+                append(divFacture, affichageNomMagasin);
+
                 // Affichage du id de la facture.
-                let idFacture = createNode("h2");
+                let idFacture = createNode("h4");
                 idFacture.className = "id-facture";
                 idFacture.innerHTML = `Facture: id ${facture.id_achat}`;
                 append(divFacture, idFacture);
+
+                
             }
         })
     })
