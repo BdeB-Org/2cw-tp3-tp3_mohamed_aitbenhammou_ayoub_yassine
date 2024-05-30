@@ -221,7 +221,7 @@ label {
 
 /* Style pour l'affichage dynamique des produits dans le panier. */
 .div-panier-produit-afficher {
-    width: 600px;
+    width: 800px;
     margin-top: 5%;
     margin-left: 12%;
     margin-bottom: 8%;
