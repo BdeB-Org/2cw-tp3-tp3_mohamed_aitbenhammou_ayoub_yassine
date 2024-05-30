@@ -248,7 +248,7 @@ label {
 .resume-panier {
     width: 400px;
     height: 220px;
-    margin-top: 6%;
+    margin-top: 3%;
     margin-left: 70%;
 }
 
@@ -256,4 +256,13 @@ label {
     margin-left: 70%;
     margin-top: 2%;
     display: block;
+    padding: 15px;
+    color: black;
+    border-radius: 10px;
+    border-style: solid;
+    font-size: 15px;
+}
+
+.div-panier-produit-afficher {
+    margin-top: 2%;
 }
