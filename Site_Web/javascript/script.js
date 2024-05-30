@@ -161,29 +161,13 @@ function afficherMagasins() {
 
 // Demander le numéro du client et afficher dynamiquement son panier.
 function demanderNumeroClientEtAfficherPanier() {
-    /*
-    <label for="numero-client">Numéro du client:</label>
-        <input type="number" id="numero-client" name="numero-client">
-        <button type="submit">Soumettre</button>
-    </input>
-    */
-
-    let formulaireNumeroClient = document.getElementById("formulaire-numero-client");
-    let labelNumeroClient = createNode("label");
-    labelNumeroClient.innerHTML = "Numéro du client: ";
-    append(formulaireNumeroClient, labelNumeroClient);
-    
-
-    const nombrePanier = 10;
-    let numeroClientPanier;
-    /*
     do {
         numeroClientPanier = window.prompt("Veuillez saisir le numéro du client dont vous voulez voir le panier: ");
         if (numeroClientPanier < 1 || numeroClientPanier > nombrePanier) {
             window.alert(`Le numéro de client est invalide, il doit être entre 1 et ${nombrePanier}.`);
         }
     } while (numeroClientPanier < 1 || numeroClientPanier > nombrePanier);
-    */
+    
     const urlTablePanierClient = urlTablePanier + numeroClientPanier;
     console.log(urlTablePanierClient);
 
