@@ -244,14 +244,10 @@ function demanderNumeroClientEtAfficherPanier() {
                     magasinLivrerProduit.innerHTML = "Le produit sera livré par: Ludo Toronto";
                 }
                 append(divInformationProduitPanier, magasinLivrerProduit);
-
-
-
-
-
-                
-                
             }
+
+            const resumePanier = document.getElemebtById("resume-panier");
+            
         })
     })
     .catch(function (error) {
