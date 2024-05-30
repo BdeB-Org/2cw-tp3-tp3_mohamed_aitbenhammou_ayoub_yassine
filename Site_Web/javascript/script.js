@@ -158,6 +158,10 @@ function afficherMagasins() {
         })
 }
 
+function calculerCoutTotalPanier(valeur) {
+    return valeur;
+}
+
 
 // Demander le numéro du client et afficher dynamiquement son panier.
 function demanderNumeroClientEtAfficherPanier() {
@@ -192,18 +196,19 @@ function demanderNumeroClientEtAfficherPanier() {
 
     let coutTotal = 0;
     let nombreProduitsDansPanier = 0;
-
+    
     fetch(urlTableProduit)
     .then((resp) => resp.json())
     .then(function (data) {
         let produits = data.items;
 
         
+        
+        
         return produits.map(function (produit) {
             // Vérifier si le produit appartient au panier du client.
             if (produit.panier_id_panier == idPanierClient) {
 
-                
                 // Ajout d'un élément de type "div" dans la page magasin.html.
                 let divProduitPanier = createNode("div");
                 divProduitPanier.className = "div-panier-produit-afficher";
@@ -256,29 +261,34 @@ function demanderNumeroClientEtAfficherPanier() {
                 // Calculer le nombre de produits dans le panier.
                 nombreProduitsDansPanier++;
             }
-        })
+        })         
     })
     .catch(function (error) {
         console.log((error));
     })
+    .finally(function() {
 
-    // Constante pour l'élément "div" qui contiendra le résumé du panier.
-    const resumePanier = document.getElementById("resume-panier");
+    
+        // Constante pour l'élément "div" qui contiendra le résumé du panier.
+        const resumePanier = document.getElementById("resume-panier");
 
-    // Création d'un div pour afficher les informations résumées du panier du client.
-    let divInformationsPanier = createNode("div");
-    divInformationsPanier.className = "div-informations-panier";
-    append(resumePanier, divInformationsPanier);
+        // Création d'un div pour afficher les informations résumées du panier du client.
+        let divInformationsPanier = createNode("div");
+        divInformationsPanier.className = "div-informations-panier";
+        append(resumePanier, divInformationsPanier);
 
-    // Affichage d'un titre pour le résumé du panier.
-    let titreResumePanier = createNode("h2");
-    titreResumePanier.className = "titre-resume-panier";
-    titreResumePanier.innerHTML = "Résumé de votre panier";
-    append(divInformationsPanier, titreResumePanier);
+        // Affichage d'un titre pour le résumé du panier.
+        let titreResumePanier = createNode("h2");
+        titreResumePanier.className = "titre-resume-panier";
+        titreResumePanier.innerHTML = "Résumé de votre panier";
+        append(divInformationsPanier, titreResumePanier);
 
-    // Affichage du nombre de produits dans le panier.
-    let affichageNombreProduitsPanier = createNode("p");
-    affichageNombreProduitsPanier.className = "affichage-nombre-produits-panier";
-    affichageNombreProduitsPanier.innerHTML = `Nombre de produits dans le panier: ${nombreProduitsDansPanier}`;
-    append(divInformationsPanier, affichageNombreProduitsPanier);
+        // Affichage du nombre de produits dans le panier.
+        let affichageNombreProduitsPanier = createNode("p");
+        affichageNombreProduitsPanier.className = "affichage-nombre-produits-panier";
+        affichageNombreProduitsPanier.innerHTML = `Nombre de produits dans le panier: ${nombreProduitsDansPanier}`;
+        append(divInformationsPanier, affichageNombreProduitsPanier);
+    })
+
+    
 }
