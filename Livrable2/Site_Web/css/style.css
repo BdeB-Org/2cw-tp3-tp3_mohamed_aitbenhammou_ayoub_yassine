@@ -1,0 +1,290 @@
+/* Style pour le titre dans toutes les pages html. */
+.nom-site {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/* Style pour la page principale "index.html". */
+.description-accueil {
+    font-size: 20px;
+}
+
+/* Style pour toutes les pages. */
+body {
+    background-image: url(../image/image-de-fond.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/* Centrer le message d'accueil de la page index.html. */
+.message-accueil {
+    margin-top: 10%;
+    text-align: center;
+    font-size: 25px;
+}
+
+/* Style pour le bouton "Nos produits" dans la page index.html. */
+.boutton-nos-produits {
+    margin-top: 50px;
+    padding: 15px;
+    color: black;
+    border-radius: 10px;
+    border-style: solid;
+    font-size: 15px;
+}
+
+/* Style pour l'effet lorsque la souris passe par dessus le bouton dans la page index.html. */
+.boutton-nos-produits:hover {
+    transition-duration: 0.15s;
+    background-color: rgb(85, 78, 78);
+}
+
+
+/* Style pour la bare de navigation dans toutes les pages. */
+.barre-de-navigation {
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.barre-de-navigation ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+    text-decoration: none;
+}
+
+.barre-de-navigation ul li::after {
+    content: '';
+    height: 3px;
+    width: 0;
+    background: black;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+}
+
+.barre-de-navigation ul li:hover::after {
+    width: 100%;
+    transition: 0.15;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+
+
+
+
+
+
+
+.formulaire-inscription {
+    margin-bottom: 25px;
+}
+
+label {
+    display: inline-block;
+    width: 300px;
+    text-align: center;
+}
+
+
+
+/* Style pour les titres principaux dans les différentes pages du site web. */
+
+.titre-afficher-produits, .titre-afficher-magasins, .titre-afficher-panier, .titre-afficher-facture {
+    margin-left: 10%;
+}
+
+
+
+/* Style pour l'affichage dynamique des produits dans la page produits.html. */
+
+.div-produit-afficher {
+    width: 500px;
+    margin-top: 5%;
+    margin-left: 12%;
+    margin-bottom: 8%;
+    height: 280px;
+    box-shadow: 0px 0px 4px;
+    align-items: center;
+    float: left;
+}
+
+.div-produit-afficher:hover {
+    transition: 0.15s;
+    transform: scale(1.15);
+}
+
+.nom-produit {
+    width: 100%;
+    height: 22px;
+}
+
+.description-produits {
+    margin-top: 15%;
+    margin-bottom: 2%;
+    width: 100%;
+    height: 40px;
+}
+
+.quantite-produit {
+    padding: 0px;
+    height: 20px;
+    margin-top: 5%;
+}
+
+
+.prix-produit {
+    width: 100%;
+    margin-top: 0px;
+    height: 20px;
+    margin-bottom: 0px;
+}
+
+
+
+.bouton-ajouter-au-panier {
+    margin-top: 50px;
+    padding: 15px;
+    color: black;
+    border-radius: 10px;
+    border-style: solid;
+    font-size: 15px;
+}
+
+.bouton-ajouter-au-panier:hover {
+    transition-duration: 0.15s;
+    background-color: rgb(85, 78, 78);
+}
+
+.div-image-laptop {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    float: left;
+}
+
+.image-laptop {
+    width: 98%;
+    height: 100%;
+    /*object-fit: cover;*/
+    transform: scale(0.95);
+}
+
+
+.div-informations-produit {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    float: right;
+}
+
+
+/* Style pou déplacer les magasins vers la droite et faire de la place entre eux dans la page "magasin.html". */
+.div-magasin-afficher {
+    margin-left: 25%;
+    margin-top: 5%;
+    border: 2px solid black;
+    border-radius: 20px;
+    width: 50%;
+}
+
+/* Style pour l'effet lorsque la souris passe par-dessus le div pour l'affichage des magasin. */
+.div-magasin-afficher:hover {
+    transition-duration: 0.15s;
+    background-color: white;
+    transform: scale(1.15);
+}
+
+/* Style pour le positionnement des informations des magasins dans le div des magasins.*/
+.nom-magasin, .numero-magasin, .adresse-magasin, .numero-telephone-magasin, .horaire-ouverture-magasin {
+    margin-left: 5%;
+}
+
+
+/* Style pour l'affichage dynamique des produits dans le panier. */
+.div-panier-produit-afficher {
+    width: 800px;
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-bottom: 8%;
+    height: 120px;
+    box-shadow: 0px 0px 4px;
+    align-items: center;
+    float: left;
+}
+
+.div-image-produit-panier {
+    margin-left: 1%;
+    width: 25%;
+    height: 100%;
+    display: flex;
+    float: left;
+}
+
+.nom-produit-panier {
+    margin: 0px;
+    margin-top: 2%;
+}
+
+/* Style pour l'affichage du résumé du panier. */
+.resume-panier {
+    width: 400px;
+    height: 220px;
+    margin-top: 3%;
+    margin-left: 70%;
+}
+
+.bouton-ajouter-produits-panier, .bouton-facture {
+    margin-left: 70%;
+    margin-top: 2%;
+    display: block;
+    padding: 15px;
+    color: black;
+    border-radius: 10px;
+    border-style: solid;
+    font-size: 15px;
+}
+
+.bouton-ajouter-produits-panier:hover, .bouton-facture:hover {
+    transition-duration: 0.15s;
+    background-color: rgb(85, 78, 78);
+}
+
+
+.div-panier-produit-afficher {
+    margin-top: 2%;
+}
+
+/* Style pour les éléments dans la page "facture.html". */
+.facture {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 38%;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+.facture:hover {
+    transition-duration: 0.15s;
+    background-color: white;
+    transform: scale(1.15);
+}
+
+.affichage-nom-magasin-facture, .id-facture, .cout-total-avant-taxes-facture,
+ .affichage-taxe-produits-services-facture, .affichage-taxe-vente-Quebec-facture,
+  .affichage-cout-total-facture-apres-taxes, .affichage-date-achat, .message-facture {
+    margin-left: 2%;
+}
