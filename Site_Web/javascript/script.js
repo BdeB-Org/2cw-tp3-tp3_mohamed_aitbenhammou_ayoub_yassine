@@ -317,3 +317,9 @@ function demanderNumeroClientEtAfficherPanier() {
 
     
 }
+
+
+
+function afficherFacture() {
+    
+}
