@@ -272,3 +272,13 @@ label {
 .div-panier-produit-afficher {
     margin-top: 2%;
 }
+
+/* Style pour les éléments dans la page "facture.html". */
+.facture {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 38%;
+    border: 2px solid black;
+    border-radius: 20px;
+}
