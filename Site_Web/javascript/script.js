@@ -254,10 +254,16 @@ function demanderNumeroClientEtAfficherPanier() {
                 nombreProduitsDansPanier++;
             }
         })
-        const resumePanier = document.getElementById("resume-panier");
-
     })
     .catch(function (error) {
         console.log((error));
     })
+
+    // Constante pour l'élément "div" qui contiendra le résumé du panier.
+    const resumePanier = document.getElementById("resume-panier");
+
+    // Création d'un div pour afficher les informations résumées du panier du client.
+    let divInformationsPanier = createNode("div");
+    divInformationsPanier.className = "div-informations-panier";
+    append(resumePanier, divInformationsPanier);
 }
