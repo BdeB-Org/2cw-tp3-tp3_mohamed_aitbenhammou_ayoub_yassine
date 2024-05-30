@@ -202,7 +202,7 @@ function demanderNumeroClientEtAfficherPanier() {
                 // Ajout d'un élément de type "div" dans la page magasin.html.
                 let divProduitPanier = createNode("div");
                 divProduitPanier.className = "div-panier-produit-afficher";
-                append(divProduitPanier, divProduitPanier);
+                append(panier, divProduitPanier);
 
                 // Création d'un élément div qui contiendra l'image du produit dans le panier.  
                 let divImageProduitPanier = createNode("div");
