@@ -288,3 +288,9 @@ label {
     background-color: white;
     transform: scale(1.15);
 }
+
+.affichage-nom-magasin-facture, .id-facture, .cout-total-avant-taxes-facture,
+ .affichage-taxe-produits-services-facture, .affichage-taxe-vente-Quebec-facture,
+  .affichage-cout-total-facture-apres-taxes, .affichage-date-achat, .message-facture {
+    margin-left: 2%;
+}

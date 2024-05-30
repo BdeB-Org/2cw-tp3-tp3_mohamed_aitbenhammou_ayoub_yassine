@@ -357,7 +357,7 @@ function afficherFacture() {
 
                 // Affichage du coût total de l'achat avant taxes.
                 let coutTotalAchatAvantTaxes = createNode("p");
-                coutTotalAchatAvantTaxes.innerHTML = "cout-total-avant-taxes-facture";
+                coutTotalAchatAvantTaxes.className = "cout-total-avant-taxes-facture";
                 coutTotalAchatAvantTaxes.innerHTML = `Coût total avant taxes: ${facture.prix_total} $`;
                 append(divFacture, coutTotalAchatAvantTaxes);
 
