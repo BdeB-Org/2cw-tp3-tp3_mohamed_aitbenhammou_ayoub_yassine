@@ -194,17 +194,15 @@ function demanderNumeroClientEtAfficherPanier() {
     .then(function (data) {
         let produits = data.items;
 
-        const tableProduitsPanier = document.getElementById("table-produit-panier");
         return produits.map(function (produit) {
             // Vérifier si le produit appartient au panier du client.
             if (produit.panier_id_panier == idPanierClient) {
 
-                let rangee = tableProduitsPanier.insertRow();
-                let colonne = rangee.insertCell();
+                
                 // Ajout d'un élément de type "div" dans la page magasin.html.
                 let divProduitPanier = createNode("div");
                 divProduitPanier.className = "div-panier-produit-afficher";
-                append(panier, divProduitPanier);
+                append(divProduitPanier, divProduitPanier);
 
                 // Création d'un élément div qui contiendra l'image du produit dans le panier.  
                 let divImageProduitPanier = createNode("div");
