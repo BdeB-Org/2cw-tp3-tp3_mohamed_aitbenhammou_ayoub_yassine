@@ -379,6 +379,11 @@ function afficherFacture() {
                 affichageCoutTotalApresTaxesFacture.innerHTML = `Coût total après taxes: ${facture.prix_total * 1.14997} $`;
                 append(divFacture, affichageCoutTotalApresTaxesFacture);
 
+                // Affichage de la date d'achat dans la facture.
+                let affichageDateAchat = createNode("p");
+                affichageDateAchat.className = "affichage-date-achat";
+                affichageDateAchat.innerHTML = `Date d'achat: ${facture.date_achat}`;
+                append(divFacture, affichageDateAchat);
                 
             }
         })
