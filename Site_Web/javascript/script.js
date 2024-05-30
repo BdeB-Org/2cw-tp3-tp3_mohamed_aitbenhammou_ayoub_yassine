@@ -288,6 +288,13 @@ function demanderNumeroClientEtAfficherPanier() {
         affichageNombreProduitsPanier.className = "affichage-nombre-produits-panier";
         affichageNombreProduitsPanier.innerHTML = `Nombre de produits dans le panier: ${nombreProduitsDansPanier}`;
         append(divInformationsPanier, affichageNombreProduitsPanier);
+
+        // Affichage du coût total des produits dans le panier.
+        let affichageCoutTotalPanier = createNode("p");
+        affichageCoutTotalPanier.className = "affichage-cout-total-panier";
+        affichageCoutTotalPanier.innerHTML = `Coût total: ${coutTotal} $`;
+        append(divInformationsPanier, affichageCoutTotalPanier);
+        
     })
 
     
