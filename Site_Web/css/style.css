@@ -263,6 +263,12 @@ label {
     font-size: 15px;
 }
 
+.bouton-ajouter-produits-panier:hover, .bouton-facture:hover {
+    transition-duration: 0.15s;
+    background-color: rgb(85, 78, 78);
+}
+
+
 .div-panier-produit-afficher {
     margin-top: 2%;
 }
