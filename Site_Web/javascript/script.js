@@ -158,14 +158,12 @@ function afficherMagasins() {
         })
 }
 
-function calculerCoutTotalPanier(valeur) {
-    return valeur;
-}
 
 
 // Demander le numéro du client et afficher dynamiquement son panier.
+let numeroClient;
 function demanderNumeroClientEtAfficherPanier() {
-    let numeroClient;
+    
     let nombrePanier = 10;
     do {
         numeroClient = window.prompt("Veuillez saisir le numéro du client dont vous voulez voir le panier: ");
@@ -326,8 +324,22 @@ function afficherFacture() {
     .then(function (data) {
         let factures = data.items;
 
+        // L'élément "div" où toutes les informations de la facture seront affichées.
+        let divFacture = document.getElementById("facture");
+
         return factures.map(function (facture) {
-            
+            if (facture.panier_id_panier == numeroClient) {
+
+                // Affichage du id de la facture.
+                let idFacture = createNode("h2");
+                idFacture.className = "id-facture";
+                idFacture.innerHTML = `Facture: id ${facture.id_achat}`;
+                append(divFacture, idFacture);
+            }
         })
     })
-}
+    .catch(function (error) {
+        console.log(error);
+    })
+
+}   
