@@ -321,5 +321,13 @@ function demanderNumeroClientEtAfficherPanier() {
 
 
 function afficherFacture() {
-    
+    fetch(urlTableFacture)
+    .then((resp) => resp.json())
+    .then(function (data) {
+        let factures = data.items;
+
+        return factures.map(function (facture) {
+            
+        })
+    })
 }
