@@ -384,6 +384,12 @@ function afficherFacture() {
                 affichageDateAchat.className = "affichage-date-achat";
                 affichageDateAchat.innerHTML = `Date d'achat: ${facture.date_achat}`;
                 append(divFacture, affichageDateAchat);
+
+                // Affichage d'un message de remerciement pour le client dans sa facture.
+                let messageFacuture = createNode("p");
+                messageFacuture.className = "message-facture";
+                messageFacuture.innerHTML = "Merci d'avoir magasiné chez Ludo<br>Bonne journée";
+                append(divFacture, messageFacuture);
                 
             }
         })
