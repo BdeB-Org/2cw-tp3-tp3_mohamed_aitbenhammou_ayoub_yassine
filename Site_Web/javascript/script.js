@@ -194,6 +194,8 @@ function demanderNumeroClientEtAfficherPanier() {
     .then(function (data) {
         let produits = data.items;
 
+        let coutTotal = 0;
+        let nombreProduitsDansPanier = 0;
         return produits.map(function (produit) {
             // Vérifier si le produit appartient au panier du client.
             if (produit.panier_id_panier == idPanierClient) {
@@ -244,11 +246,16 @@ function demanderNumeroClientEtAfficherPanier() {
                     magasinLivrerProduit.innerHTML = "Le produit sera livré par: Ludo Toronto";
                 }
                 append(divInformationProduitPanier, magasinLivrerProduit);
-            }
 
-            const resumePanier = document.getElemebtById("resume-panier");
-            
+                // Calculer le coût total des produits dans le panier.
+                coutTotal += produit.prix;
+
+                // Calculer le nombre de produits dans le panier.
+                nombreProduitsDansPanier++;
+            }
         })
+        const resumePanier = document.getElementById("resume-panier");
+
     })
     .catch(function (error) {
         console.log((error));
