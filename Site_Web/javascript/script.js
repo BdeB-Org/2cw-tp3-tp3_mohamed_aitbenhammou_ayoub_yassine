@@ -367,6 +367,12 @@ function afficherFacture() {
                 affichageTaxeProduitsEtServicesFacutre.innerHTML = `Taxe sur les produits et les services (TPS): ${facture.prix_total * 0.05} $`;
                 append(divFacture, affichageTaxeProduitsEtServicesFacutre);
 
+                // Affichage de la taxe de vente du Québec (TVQ).
+                let affichageTaxeVenteQuebecFacture = createNode("p");
+                affichageTaxeVenteQuebecFacture.className = "affichage-taxe-vente-Quebec-facture";
+                affichageTaxeVenteQuebecFacture.innerHTML = `Taxe de vente du Québec (TVQ): ${facture.prix_total * 0.0997} $`
+                append(divFacture, affichageTaxeVenteQuebecFacture);
+
                 
             }
         })
