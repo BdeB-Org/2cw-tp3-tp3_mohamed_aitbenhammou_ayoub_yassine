@@ -217,3 +217,16 @@ label {
 .nom-magasin, .numero-magasin, .adresse-magasin, .numero-telephone-magasin, .horaire-ouverture-magasin {
     margin-left: 5%;
 }
+
+
+/* Style pour l'affichage dynamique des produits dans le panier. */
+.div-panier-produit-afficher {
+    width: 500px;
+    margin-top: 5%;
+    margin-left: 12%;
+    margin-bottom: 8%;
+    height: 100px;
+    box-shadow: 0px 0px 4px;
+    align-items: center;
+    float: left;
+}
