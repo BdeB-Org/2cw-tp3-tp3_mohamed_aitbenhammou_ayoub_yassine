@@ -199,6 +199,8 @@ function demanderNumeroClientEtAfficherPanier() {
             // Vérifier si le produit appartient au panier du client.
             if (produit.panier_id_panier == idPanierClient) {
 
+                let rangee = tableProduitsPanier.insertRow();
+                let colonne = rangee.insertCell();
                 // Ajout d'un élément de type "div" dans la page magasin.html.
                 let divProduitPanier = createNode("div");
                 divProduitPanier.className = "div-panier-produit-afficher";
