@@ -105,9 +105,9 @@ label {
 
 
 
-/* Style pour la page inscription.html. */
+/* Style pour les titres principaux dans les différentes pages du site web. */
 
-.titre-afficher-produits, .titre-afficher-magasins, .titre-afficher-panier {
+.titre-afficher-produits, .titre-afficher-magasins, .titre-afficher-panier, .titre-afficher-facture {
     margin-left: 10%;
 }
 
@@ -216,4 +216,81 @@ label {
 /* Style pour le positionnement des informations des magasins dans le div des magasins.*/
 .nom-magasin, .numero-magasin, .adresse-magasin, .numero-telephone-magasin, .horaire-ouverture-magasin {
     margin-left: 5%;
+}
+
+
+/* Style pour l'affichage dynamique des produits dans le panier. */
+.div-panier-produit-afficher {
+    width: 600px;
+    margin-top: 5%;
+    margin-left: 12%;
+    margin-bottom: 8%;
+    height: 120px;
+    box-shadow: 0px 0px 4px;
+    align-items: center;
+    float: left;
+}
+
+.div-image-produit-panier {
+    margin-left: 1%;
+    width: 25%;
+    height: 100%;
+    display: flex;
+    float: left;
+}
+
+.nom-produit-panier {
+    margin: 0px;
+    margin-top: 2%;
+}
+
+/* Style pour l'affichage du résumé du panier. */
+.resume-panier {
+    width: 400px;
+    height: 220px;
+    margin-top: 3%;
+    margin-left: 70%;
+}
+
+.bouton-ajouter-produits-panier, .bouton-facture {
+    margin-left: 70%;
+    margin-top: 2%;
+    display: block;
+    padding: 15px;
+    color: black;
+    border-radius: 10px;
+    border-style: solid;
+    font-size: 15px;
+}
+
+.bouton-ajouter-produits-panier:hover, .bouton-facture:hover {
+    transition-duration: 0.15s;
+    background-color: rgb(85, 78, 78);
+}
+
+
+.div-panier-produit-afficher {
+    margin-top: 2%;
+}
+
+/* Style pour les éléments dans la page "facture.html". */
+.facture {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 38%;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+.facture:hover {
+    transition-duration: 0.15s;
+    background-color: white;
+    transform: scale(1.15);
+}
+
+.affichage-nom-magasin-facture, .id-facture, .cout-total-avant-taxes-facture,
+ .affichage-taxe-produits-services-facture, .affichage-taxe-vente-Quebec-facture,
+  .affichage-cout-total-facture-apres-taxes, .affichage-date-achat, .message-facture {
+    margin-left: 2%;
 }
