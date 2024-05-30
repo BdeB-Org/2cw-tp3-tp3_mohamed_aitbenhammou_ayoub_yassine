@@ -230,3 +230,10 @@ label {
     align-items: center;
     float: left;
 }
+
+.div-image-produit-panier {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    float: left;
+}
