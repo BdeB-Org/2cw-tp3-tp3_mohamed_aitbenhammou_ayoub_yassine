@@ -302,13 +302,13 @@ function demanderNumeroClientEtAfficherPanier() {
         // Affichage de la taxe de vente du Québec (TVQ).
         let affichageTaxeVenteQuebec = createNode("p");
         affichageTaxeVenteQuebec.className = "affichage-taxe-vente-Quebec";
-        affichageTaxeVenteQuebec.innerHTML = `Taxe de vente du Québec (TVQ): ${coutTotal * 0.0997} $`
+        affichageTaxeVenteQuebec.innerHTML = `Taxe de vente du Québec (TVQ): ${coutTotal * 0.0997} $`;
         append(divInformationsPanier, affichageTaxeVenteQuebec);
 
         // Affichage du coût total des produits après taxes dans le panier.
         let affichageCoutTotalPanierApresTaxes = createNode("p");
         affichageCoutTotalPanierApresTaxes.className ="affichage-cout-total-panier-apres-taxes";
-        affichageCoutTotalPanierApresTaxes.innerHTML = `Coût total après taxes: ${coutTotal * 1.14997} $`
+        affichageCoutTotalPanierApresTaxes.innerHTML = `Coût total après taxes: ${coutTotal * 1.14997} $`;
         append(divInformationsPanier, affichageCoutTotalPanierApresTaxes);
         
     })
@@ -370,8 +370,14 @@ function afficherFacture() {
                 // Affichage de la taxe de vente du Québec (TVQ).
                 let affichageTaxeVenteQuebecFacture = createNode("p");
                 affichageTaxeVenteQuebecFacture.className = "affichage-taxe-vente-Quebec-facture";
-                affichageTaxeVenteQuebecFacture.innerHTML = `Taxe de vente du Québec (TVQ): ${facture.prix_total * 0.0997} $`
+                affichageTaxeVenteQuebecFacture.innerHTML = `Taxe de vente du Québec (TVQ): ${facture.prix_total * 0.0997} $`;
                 append(divFacture, affichageTaxeVenteQuebecFacture);
+
+                // Affichage du coût total des produits après taxes dans la facture.
+                let affichageCoutTotalApresTaxesFacture = createNode("p");
+                affichageCoutTotalApresTaxesFacture.className ="affichage-cout-total-facture-apres-taxes";
+                affichageCoutTotalApresTaxesFacture.innerHTML = `Coût total après taxes: ${facture.prix_total * 1.14997} $`;
+                append(divFacture, affichageCoutTotalApresTaxesFacture);
 
                 
             }
