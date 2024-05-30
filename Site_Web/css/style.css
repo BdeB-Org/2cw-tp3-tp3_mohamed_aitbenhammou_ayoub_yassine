@@ -243,3 +243,9 @@ label {
     margin: 0px;
     margin-top: 2%;
 }
+
+/* Style pour l'affichage du résumé du panier. */
+.resume-panier {
+    margin-top: 5%;
+    margin-left: 60%;
+}
