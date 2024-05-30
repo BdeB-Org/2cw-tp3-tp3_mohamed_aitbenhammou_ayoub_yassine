@@ -221,17 +221,12 @@ function demanderNumeroClientEtAfficherPanier() {
                 append(divProduitPanier, divInformationProduitPanier);
 
                 // Affichage du nom du produit dans le panier.
-                let nomProduitPanier = createNode("h5");
+                let nomProduitPanier = createNode("h4");
                 nomProduitPanier.className = "nom-produit-panier";
                 nomProduitPanier.innerHTML = produit.nom_produit;
                 append(divInformationProduitPanier, nomProduitPanier);
 
-                // Affichage de la description du produit dans le panier.
-                let descriptionProduitPanier = createNode("p");
-                descriptionProduitPanier.className = "description-produit-panier"
-                descriptionProduitPanier.innerHTML = produit.description;
-                append(divInformationProduitPanier, descriptionProduitPanier);
-
+                
                 // Affichage du prix du produit dans le panier
                 let prixProduitPanier = createNode("p");
                 prixProduitPanier.className = "prix-produit-panier"
@@ -242,11 +237,11 @@ function demanderNumeroClientEtAfficherPanier() {
                 let magasinLivrerProduit = createNode("p");
                 magasinLivrerProduit.className = "magasin-livrer-produit";
                 if (parseInt(produit.magasin_id_magasin) == 1) {
-                    magasinLivrerProduit.innerHTML = `Le produit sera livré par: Ludo Montréal<br><br>Numéro du magasin: ${produit.magasin_id_magasin}`;
+                    magasinLivrerProduit.innerHTML = "Le produit sera livré par: Ludo Montréal";
                 } else if (parseInt(produit.magasin_id_magasin == 2)) {
-                    magasinLivrerProduit.innerHTML = `Le produit sera livré par: Ludo Laval<br><br>Numéro du magasin: ${produit.magasin_id_magasin}`;
+                    magasinLivrerProduit.innerHTML = "Le produit sera livré par: Ludo Laval";
                 } else {
-                    magasinLivrerProduit.innerHTML = `Le produit sera livré par: Ludo Toronto<br><br>Numéro du magasin: ${produit.magasin_id_magasin}`;
+                    magasinLivrerProduit.innerHTML = "Le produit sera livré par: Ludo Toronto";
                 }
                 append(divInformationProduitPanier, magasinLivrerProduit);
 
