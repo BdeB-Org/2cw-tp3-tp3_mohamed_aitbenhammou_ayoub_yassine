@@ -105,9 +105,9 @@ label {
 
 
 
-/* Style pour la page inscription.html. */
+/* Style pour les titres principaux dans les différentes pages du site web. */
 
-.titre-afficher-produits, .titre-afficher-magasins, .titre-afficher-panier {
+.titre-afficher-produits, .titre-afficher-magasins, .titre-afficher-panier, .titre-afficher-facture {
     margin-left: 10%;
 }
 
