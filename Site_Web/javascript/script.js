@@ -355,11 +355,17 @@ function afficherFacture() {
                 idFacture.innerHTML = `Facture: id ${facture.id_achat}`;
                 append(divFacture, idFacture);
 
-                // Affichage du coût total de l'achat.
+                // Affichage du coût total de l'achat avant taxes.
                 let coutTotalAchatAvantTaxes = createNode("p");
                 coutTotalAchatAvantTaxes.innerHTML = "cout-total-avant-taxes-facture";
                 coutTotalAchatAvantTaxes.innerHTML = `Coût total avant taxes: ${facture.prix_total} $`;
                 append(divFacture, coutTotalAchatAvantTaxes);
+
+                // Affichage de la taxe sur les produits et les services (TPS).
+                let affichageTaxeProduitsEtServicesFacutre = createNode("p");
+                affichageTaxeProduitsEtServicesFacutre.className = "affichage-taxe-produits-services-facture";
+                affichageTaxeProduitsEtServicesFacutre.innerHTML = `Taxe sur les produits et les services (TPS): ${facture.prix_total * 0.05} $`;
+                append(divFacture, affichageTaxeProduitsEtServicesFacutre);
 
                 
             }
