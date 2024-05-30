@@ -161,10 +161,10 @@ function afficherMagasins() {
 
 
 // Demander le numéro du client et afficher dynamiquement son panier.
-let numeroClient;
+
 function demanderNumeroClientEtAfficherPanier() {
-    
-    let nombrePanier = 10;
+    let numeroClient;
+    const nombrePanier = 10;
     do {
         numeroClient = window.prompt("Veuillez saisir le numéro du client dont vous voulez voir le panier: ");
         if (numeroClient < 1 || numeroClient > nombrePanier) {
@@ -319,6 +319,18 @@ function demanderNumeroClientEtAfficherPanier() {
 
 
 function afficherFacture() {
+    let numeroClient;
+    const nombreFacture = 10;
+
+    // Demander le numéro du client afin d'afficher sa facture.
+    do {
+        numeroClient = window.prompt("Veuillez saisir le numéro du client dont vous voulez voir la facture: ");
+        if (numeroClient < 1 || numeroClient > nombreFacture) {
+            window.alert(`Le numéro de client est invalide, il doit être entre 1 et ${nombreFacture}.`);
+        }
+    } while (numeroClient < 1 || numeroClient > nombreFacture);
+
+
     fetch(urlTableFacture)
     .then((resp) => resp.json())
     .then(function (data) {
@@ -327,6 +339,7 @@ function afficherFacture() {
         // L'élément "div" où toutes les informations de la facture seront affichées.
         let divFacture = document.getElementById("facture");
 
+        alert(numeroClient);
         return factures.map(function (facture) {
             if (facture.panier_id_panier == numeroClient) {
 
