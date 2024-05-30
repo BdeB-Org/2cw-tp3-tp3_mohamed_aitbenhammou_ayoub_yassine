@@ -295,11 +295,17 @@ function demanderNumeroClientEtAfficherPanier() {
         affichageCoutTotalPanier.innerHTML = `Coût total avant taxes: ${coutTotal} $`;
         append(divInformationsPanier, affichageCoutTotalPanier);
 
-        // Affichage de la taxe sur les produits et les services.
+        // Affichage de la taxe sur les produits et les services (TPS).
         let affichageTaxeProduitsEtServices = createNode("p");
         affichageTaxeProduitsEtServices.className = "affichage-taxe-produits-services";
         affichageTaxeProduitsEtServices.innerHTML = `Taxe sur les produits et les services (TPS): ${coutTotal * 0.05} $`;
         append(divInformationsPanier, affichageTaxeProduitsEtServices);
+
+        // Affichage de la taxe de vente du Québec (TVQ).
+        let affichageTaxeVenteQuebec = createNode("p");
+        affichageTaxeVenteQuebec.className = "affichage-taxe-vente-Quebec";
+        affichageTaxeVenteQuebec.innerHTML = `Taxe de vente du Québec (TVQ): ${coutTotal * 0.0997} $`
+        append(divInformationsPanier, affichageTaxeVenteQuebec);
         
     })
 
