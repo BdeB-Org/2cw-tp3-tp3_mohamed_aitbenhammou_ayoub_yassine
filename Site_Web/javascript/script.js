@@ -189,13 +189,16 @@ function demanderNumeroClientEtAfficherPanier() {
 
     // Fonction fetch afin d'obtenir les informations du porduit dans le panier en fonction du numéro de panier.
     let panier = document.getElementById("panier");
+
+    let coutTotal = 0;
+    let nombreProduitsDansPanier = 0;
+
     fetch(urlTableProduit)
     .then((resp) => resp.json())
     .then(function (data) {
         let produits = data.items;
 
-        let coutTotal = 0;
-        let nombreProduitsDansPanier = 0;
+        
         return produits.map(function (produit) {
             // Vérifier si le produit appartient au panier du client.
             if (produit.panier_id_panier == idPanierClient) {
@@ -272,4 +275,10 @@ function demanderNumeroClientEtAfficherPanier() {
     titreResumePanier.className = "titre-resume-panier";
     titreResumePanier.innerHTML = "Résumé de votre panier";
     append(divInformationsPanier, titreResumePanier);
+
+    // Affichage du nombre de produits dans le panier.
+    let affichageNombreProduitsPanier = createNode("p");
+    affichageNombreProduitsPanier.className = "affichage-nombre-produits-panier";
+    affichageNombreProduitsPanier.innerHTML = `Nombre de produits dans le panier: ${nombreProduitsDansPanier}`;
+    append(divInformationsPanier, affichageNombreProduitsPanier);
 }
