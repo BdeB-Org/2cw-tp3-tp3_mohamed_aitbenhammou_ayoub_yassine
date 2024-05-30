@@ -194,6 +194,7 @@ function demanderNumeroClientEtAfficherPanier() {
     .then(function (data) {
         let produits = data.items;
 
+        const tableProduitsPanier = document.getElementById("table-produit-panier");
         return produits.map(function (produit) {
             // Vérifier si le produit appartient au panier du client.
             if (produit.panier_id_panier == idPanierClient) {
