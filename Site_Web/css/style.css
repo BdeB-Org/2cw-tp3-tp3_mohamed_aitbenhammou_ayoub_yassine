@@ -246,6 +246,14 @@ label {
 
 /* Style pour l'affichage du résumé du panier. */
 .resume-panier {
-    margin-top: 5%;
-    margin-left: 60%;
+    width: 400px;
+    height: 220px;
+    margin-top: 6%;
+    margin-left: 70%;
+}
+
+.bouton-ajouter-produits-panier, .bouton-facture {
+    margin-left: 70%;
+    margin-top: 2%;
+    display: block;
 }
