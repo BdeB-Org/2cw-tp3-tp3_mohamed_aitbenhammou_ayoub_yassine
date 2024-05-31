@@ -83,25 +83,11 @@ a{
 
 
 
-/* Style pour la page inscription.html. */
-.message-creer-compte {
-    margin-bottom: 50px;
-}
 
-.formulaire {
-    text-align: center;
-    font-size: 20px;
-}
 
-.formulaire-inscription {
-    margin-bottom: 25px;
-}
 
-label {
-    display: inline-block;
-    width: 300px;
-    text-align: center;
-}
+
+
 
 
 
@@ -221,9 +207,9 @@ label {
 
 /* Style pour l'affichage dynamique des produits dans le panier. */
 .div-panier-produit-afficher {
-    width: 600px;
+    width: 800px;
     margin-top: 5%;
-    margin-left: 12%;
+    margin-left: 10%;
     margin-bottom: 8%;
     height: 120px;
     box-shadow: 0px 0px 4px;
