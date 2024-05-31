@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="modeleLogiqueBdd" id="08E96F3C-63CA-20B6-AB59-980560D5ED53" version="3.5">
+<createdBy>Imada</createdBy>
+<createdTime>2024-05-31 02:13:19 UTC</createdTime>
+<ownerDesignName>modeleLogiqueBdd</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>08E96F3C-63CA-20B6-AB59-980560D5ED53</designId>
+<usedDesignStorageDescriptors>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="C96732D3-2ACA-2A17-A258-EA015CD3C602">
+<designStoragePath>C:\Users\Imada\OneDrive - Collège de Bois-de-Boulogne\Session 2\Application web\TP3\modeleLogique</designStoragePath>
+</designDescr>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="313518FE-5AA9-611B-4343-8DDB09008F98">
+<designStoragePath>C:\Users\Imada\OneDrive - Collège de Bois-de-Boulogne\Session 2\Application web\TP3\fichiers_bdd\ModelLogique</designStoragePath>
+</designDescr>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="A1D804C9-63C2-3232-E145-A3C3778DD61F">
+<designStoragePath>C:\Users\Imada\OneDrive - Collège de Bois-de-Boulogne\Session 2\Application web\TP3\modèleLogique</designStoragePath>
+</designDescr>
+</usedDesignStorageDescriptors>
+</OSDM_Design>
